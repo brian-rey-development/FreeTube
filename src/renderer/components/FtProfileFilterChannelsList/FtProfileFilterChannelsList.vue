@@ -20,7 +20,16 @@
       >
         {{ selectedText }}
       </p>
-      <FtFlexBox>
+      <FtFlexBox
+        v-if="channels.length === 0"
+      >
+        <p class="message">
+          {{ $t('Profile.No other channels to add') }}
+        </p>
+      </FtFlexBox>
+      <FtFlexBox
+        v-else
+      >
         <FtChannelBubble
           v-for="channel in channels"
           :key="channel.id"
@@ -33,7 +42,7 @@
         />
       </FtFlexBox>
       <FtFlexBox
-        v-if="showUnsubscribeButton"
+        v-if="showUnsubscribeButton && channels.length > 0"
       >
         <FtButton
           :label="$t('Profile.Select All')"
