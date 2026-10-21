@@ -163,12 +163,6 @@ const playlistPageLinkTo = computed(() => ({
   },
 }))
 
-/** @type {import('vue').ComputedRef<'local' | 'invidious'>} */
-const backendPreference = computed(() => store.getters.getBackendPreference)
-
-/** @type {import('vue').ComputedRef<string>} */
-const currentInvidiousInstanceUrl = computed(() => store.getters.getCurrentInvidiousInstanceUrl)
-
 if (isUserPlaylist.value) {
   parseUserData()
 } else if (props.data.dataSource === 'local') {
@@ -180,9 +174,7 @@ if (isUserPlaylist.value) {
 function parseInvidiousData() {
   title = props.data.title
 
-  thumbnail = props.data.playlistThumbnail
-    .replace('https://i.ytimg.com', currentInvidiousInstanceUrl.value)
-    .replace('hqdefault', 'mqdefault')
+  thumbnail = props.data.playlistThumbnail.replace('hqdefault', 'mqdefault')
 
   channelName = props.data.author
   channelId = props.data.authorId
@@ -209,11 +201,7 @@ function parseUserData() {
   title = props.data.playlistName
 
   if (props.data.videos.length > 0) {
-    const origin = backendPreference.value === 'invidious'
-      ? currentInvidiousInstanceUrl.value
-      : 'https://i.ytimg.com'
-
-    thumbnail = `${origin}/vi/${props.data.videos[0].videoId}/mqdefault.jpg`
+    thumbnail = `https://i.ytimg.com/vi/${props.data.videos[0].videoId}/mqdefault.jpg`
   }
 
   channelName = ''

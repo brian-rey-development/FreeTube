@@ -678,12 +678,7 @@ const thumbnail = computed(() => {
     return deArrowCache.value.thumbnail
   }
 
-  let baseUrl
-  if (backendPreference.value === 'invidious') {
-    baseUrl = currentInvidiousInstanceUrl.value
-  } else {
-    baseUrl = 'https://i.ytimg.com'
-  }
+  const baseUrl = 'https://i.ytimg.com'
 
   switch (thumbnailPreference.value) {
     case 'start':

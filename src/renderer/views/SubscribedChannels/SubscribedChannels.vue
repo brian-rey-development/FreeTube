@@ -88,7 +88,7 @@ import FtCard from '../../components/ft-card/ft-card.vue'
 import FtFlexBox from '../../components/ft-flex-box/ft-flex-box.vue'
 import FtInput from '../../components/FtInput/FtInput.vue'
 import FtSubscribeButton from '../../components/FtSubscribeButton/FtSubscribeButton.vue'
-import { invidiousGetChannelInfo, youtubeImageUrlToInvidious, invidiousImageUrlToInvidious } from '../../helpers/api/invidious'
+import { invidiousGetChannelInfo } from '../../helpers/api/invidious'
 import { getLocalChannel, parseLocalChannelHeader } from '../../helpers/api/local'
 import { ctrlFHandler, debounce } from '../../helpers/utils'
 import { useI18n } from 'vue-i18n'
@@ -146,11 +146,6 @@ const backendPreference = computed(() => {
   return store.getters.getBackendPreference
 })
 
-/** @type {import('vue').ComputedRef<string>} */
-const currentInvidiousInstanceUrl = computed(() => {
-  return store.getters.getCurrentInvidiousInstanceUrl
-})
-
 function getSubscription() {
   subscribedChannels.value = activeSubscriptionList.value.slice().sort((a, b) => {
     return a.name?.toLowerCase().localeCompare(b.name?.toLowerCase(), locale.value)
@@ -180,16 +175,8 @@ function thumbnailURL(originalURL) {
     newURL = `https:${originalURL}`
   }
   const hostname = new URL(newURL).hostname
-  if (hostname === 'yt3.ggpht.com' || hostname === 'yt3.googleusercontent.com') {
-    if (backendPreference.value === 'invidious') { // YT to IV
-      newURL = youtubeImageUrlToInvidious(newURL, currentInvidiousInstanceUrl.value)
-    }
-  } else {
-    if (backendPreference.value === 'local') { // IV to YT
-      newURL = newURL.replace(re.ivToYt, `${ytBaseURL}/$1`)
-    } else { // IV to IV
-      newURL = invidiousImageUrlToInvidious(newURL, currentInvidiousInstanceUrl.value)
-    }
+  if (hostname !== 'yt3.ggpht.com' && hostname !== 'yt3.googleusercontent.com') { // IV to YT
+    newURL = newURL.replace(re.ivToYt, `${ytBaseURL}/$1`)
   }
 
   return newURL.replace(re.url, `$1${thumbnailSize}$2`)

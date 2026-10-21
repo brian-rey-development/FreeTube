@@ -411,9 +411,6 @@ const durationFormatted = computed(() => {
 /** @type {import('vue').ComputedRef<boolean>} */
 const hideSharingActions = computed(() => store.getters.getHideSharingActions)
 
-/** @type {import('vue').ComputedRef<string>} */
-const currentInvidiousInstanceUrl = computed(() => store.getters.getCurrentInvidiousInstanceUrl)
-
 /** @type {import('vue').ComputedRef<Record<string, object>>} */
 const historyCacheById = computed(() => store.getters.getHistoryCacheById)
 
@@ -422,9 +419,6 @@ const thumbnailPreference = computed(() => store.getters.getThumbnailPreference)
 
 /** @type {import('vue').ComputedRef<boolean>} */
 const blurThumbnails = computed(() => store.getters.getBlurThumbnails)
-
-/** @type {import('vue').ComputedRef<'local' | 'invidious'>} */
-const backendPreference = computed(() => store.getters.getBackendPreference)
 
 /** @type {import('vue').ComputedRef<boolean>} */
 const hideViews = computed(() => store.getters.getHideVideoViews)
@@ -449,13 +443,12 @@ const thumbnail = computed(() => {
     return thumbnailPlaceholder
   }
 
-  let baseUrl = 'https://i.ytimg.com'
-  if (backendPreference.value === 'invidious') {
-    baseUrl = currentInvidiousInstanceUrl.value
-  } else if (typeof props.playlistThumbnail === 'string' && props.playlistThumbnail.length > 0) {
+  if (typeof props.playlistThumbnail === 'string' && props.playlistThumbnail.length > 0) {
     // Use playlist thumbnail provided by YT when available
     return props.playlistThumbnail
   }
+
+  const baseUrl = 'https://i.ytimg.com'
 
   switch (thumbnailPreference.value) {
     case 'start':

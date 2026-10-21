@@ -311,7 +311,7 @@ import {
   invidiousGetChannelInfo,
   invidiousGetCommunityPosts,
   searchInvidiousChannel,
-  youtubeImageUrlToInvidious
+  normalizeYoutubeImageUrl
 } from '../../helpers/api/invidious'
 import {
   getLocalChannel,
@@ -430,11 +430,6 @@ const backendFallback = computed(() => store.getters.getBackendFallback)
 
 /** @type {import('vue').ComputedRef<boolean>} */
 const showFamilyFriendlyOnly = computed(() => store.getters.getShowFamilyFriendlyOnly)
-
-/** @type {import('vue').ComputedRef<string>} */
-const currentInvidiousInstanceUrl = computed(() => {
-  return store.getters.getCurrentInvidiousInstanceUrl
-})
 
 const activeProfile = computed(() => store.getters.getActiveProfile)
 
@@ -973,7 +968,7 @@ async function getChannelInfoInvidious() {
     isFamilyFriendly.value = response.isFamilyFriendly
     subCount.value = response.subCount
     const thumbnail = response.authorThumbnails[3].url
-    thumbnailUrl.value = youtubeImageUrlToInvidious(thumbnail, currentInvidiousInstanceUrl.value)
+    thumbnailUrl.value = normalizeYoutubeImageUrl(thumbnail)
     store.dispatch('updateSubscriptionDetails', { channelThumbnailUrl: thumbnail, channelName: channelName_, channelId })
     description.value = autolinker.link(response.description)
     viewCount.value = response.totalViews
@@ -985,12 +980,12 @@ async function getChannelInfoInvidious() {
       return {
         name: channel.author,
         id: channel.authorId,
-        thumbnailUrl: youtubeImageUrlToInvidious(thumbnailUrl, currentInvidiousInstanceUrl.value)
+        thumbnailUrl: normalizeYoutubeImageUrl(thumbnailUrl)
       }
     })
 
     if (Array.isArray(response.authorBanners) && response.authorBanners.length > 0) {
-      bannerUrl.value = youtubeImageUrlToInvidious(response.authorBanners[0].url, currentInvidiousInstanceUrl.value)
+      bannerUrl.value = normalizeYoutubeImageUrl(response.authorBanners[0].url)
     } else {
       bannerUrl.value = null
     }

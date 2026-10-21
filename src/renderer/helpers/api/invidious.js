@@ -599,23 +599,17 @@ export async function getInvidiousSearchResults(query, page, searchSettings) {
 
 /**
  * @param {string | undefined | null} url
- * @param {string?} currentInstance
  * @returns {string}
  */
-export function youtubeImageUrlToInvidious(url, currentInstance = null) {
+export function normalizeYoutubeImageUrl(url) {
   if (!url) return ''
 
-  if (currentInstance === null) {
-    currentInstance = getCurrentInstanceUrl()
-  }
   // Can be prefixed with `https://` or `//` (protocol relative)
   if (url.startsWith('//')) {
-    url = 'https:' + url
+    return 'https:' + url
   }
-  const newUrl = `${currentInstance}/ggpht`
-  return url.replace('https://yt3.ggpht.com', newUrl)
-    .replace('https://yt3.googleusercontent.com', newUrl)
-    .replace(/https:\/\/i\d*\.ytimg\.com/, newUrl)
+
+  return url
 }
 
 /**
@@ -637,7 +631,7 @@ function parseInvidiousCommentData(response) {
       id: comment.commentId,
       dataType: 'invidious',
       authorId: comment.authorId,
-      authorThumb: youtubeImageUrlToInvidious(comment.authorThumbnail),
+      authorThumb: normalizeYoutubeImageUrl(comment.authorThumbnail),
       author: comment.author,
       likes: comment.likeCount,
       text: autolinker.link(invidiousImageUrlToInvidious(comment.contentHtml, getCurrentInstanceUrl())),
@@ -650,7 +644,7 @@ function parseInvidiousCommentData(response) {
       replyLevel: 0,
       isHearted: comment.creatorHeart !== undefined,
       isMember: comment.isSponsor,
-      memberIconUrl: youtubeImageUrlToInvidious(comment.sponsorIconUrl),
+      memberIconUrl: normalizeYoutubeImageUrl(comment.sponsorIconUrl),
       time: getRelativeTimeFromDate(comment.published * 1000, false)
     }
   })
@@ -734,7 +728,7 @@ function parseInvidiousCommunityData(data) {
     postText: data.contentHtml.replaceAll('href="/', 'href="#/'),
     postId: data.commentId,
     authorThumbnails: data.authorThumbnails.map(thumbnail => {
-      thumbnail.url = youtubeImageUrlToInvidious(thumbnail.url)
+      thumbnail.url = normalizeYoutubeImageUrl(thumbnail.url)
       return thumbnail
     }),
     publishedTime: calculatePublishedDate(data.publishedText),
@@ -765,7 +759,7 @@ function parseInvidiousCommunityAttachments(data) {
     return {
       type: data.type,
       content: data.imageThumbnails.map(thumbnail => {
-        thumbnail.url = youtubeImageUrlToInvidious(thumbnail.url)
+        thumbnail.url = normalizeYoutubeImageUrl(thumbnail.url)
         return thumbnail
       })
     }
@@ -773,7 +767,7 @@ function parseInvidiousCommunityAttachments(data) {
 
   if (data.type === 'video') {
     data.videoThumbnails = data.videoThumbnails?.map(thumbnail => {
-      thumbnail.url = youtubeImageUrlToInvidious(thumbnail.url)
+      thumbnail.url = normalizeYoutubeImageUrl(thumbnail.url)
       return thumbnail
     })
     return {
@@ -785,7 +779,7 @@ function parseInvidiousCommunityAttachments(data) {
   if (data.type === 'multiImage') {
     const content = data.images.map(imageThumbnails => {
       return imageThumbnails.map(thumbnail => {
-        thumbnail.url = youtubeImageUrlToInvidious(thumbnail.url)
+        thumbnail.url = normalizeYoutubeImageUrl(thumbnail.url)
         return thumbnail
       })
     })
@@ -804,7 +798,7 @@ function parseInvidiousCommunityAttachments(data) {
         return {
           text: choice.text,
           image: choice.image?.map(thumbnail => {
-            thumbnail.url = youtubeImageUrlToInvidious(thumbnail.url)
+            thumbnail.url = normalizeYoutubeImageUrl(thumbnail.url)
             return thumbnail
           })
         }
@@ -821,7 +815,7 @@ function parseInvidiousCommunityAttachments(data) {
           text: choice.text,
           isCorrect: choice.isCorrect,
           image: choice.image?.map(thumbnail => {
-            thumbnail.url = youtubeImageUrlToInvidious(thumbnail.url)
+            thumbnail.url = normalizeYoutubeImageUrl(thumbnail.url)
             return thumbnail
           })
         }

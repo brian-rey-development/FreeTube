@@ -65,7 +65,6 @@ import FtPrompt from '../FtPrompt/FtPrompt.vue'
 import store from '../../store/index'
 
 import { deepCopy, showToast } from '../../helpers/utils'
-import { youtubeImageUrlToInvidious } from '../../helpers/api/invidious'
 
 /**
  * @typedef {object} Profile
@@ -93,16 +92,6 @@ const props = defineProps({
   }
 })
 
-/** @type {import('vue').ComputedRef<'local' | 'invidious'>} */
-const backendPreference = computed(() => {
-  return store.getters.getBackendPreference
-})
-
-/** @type {import('vue').ComputedRef<string>} */
-const currentInvidiousInstanceUrl = computed(() => {
-  return store.getters.getCurrentInvidiousInstanceUrl
-})
-
 const intlCollator = computed(() => {
   return new Intl.Collator([locale.value, 'en'], { sensitivity: 'base' })
 })
@@ -121,14 +110,6 @@ function loadSubscriptions() {
   const collator = intlCollator.value
 
   subscriptions_.sort((a, b) => collator.compare(a.name, b.name))
-
-  if (backendPreference.value === 'invidious') {
-    const instanceUrl = currentInvidiousInstanceUrl.value
-
-    subscriptions_.forEach((channel) => {
-      channel.thumbnail = youtubeImageUrlToInvidious(channel.thumbnail, instanceUrl)
-    })
-  }
 
   subscriptions.value = subscriptions_
 }

@@ -228,9 +228,6 @@ const backendPreference = computed(() => store.getters.getBackendPreference)
 /** @type {import('vue').ComputedRef<boolean>} */
 const backendFallback = computed(() => store.getters.getBackendFallback)
 
-/** @type {import('vue').ComputedRef<string>} */
-const currentInvidiousInstanceUrl = computed(() => store.getters.getCurrentInvidiousInstanceUrl)
-
 const isUserPlaylist = computed(() => props.playlistType === 'user')
 
 /** @type {import('vue').ComputedRef<boolean>} */
@@ -308,10 +305,7 @@ const previewVideoThumbnail = computed(() => {
     const videoId = playlistItems.value[index].videoId
 
     if (videoId) {
-      const baseUrl = backendPreference.value === 'invidious'
-        ? currentInvidiousInstanceUrl.value
-        : 'https://i.ytimg.com'
-      return `${baseUrl}/vi/${videoId}/default.jpg`
+      return `https://i.ytimg.com/vi/${videoId}/default.jpg`
     }
   }
 

@@ -67,7 +67,6 @@ import FtSelect from '../FtSelect/FtSelect.vue'
 import store from '../../store/index'
 
 import { deepCopy, showToast } from '../../helpers/utils'
-import { youtubeImageUrlToInvidious } from '../../helpers/api/invidious'
 import { MAIN_PROFILE_ID } from '../../../constants'
 
 /**
@@ -102,16 +101,6 @@ const profileIdList = shallowRef([])
 /** @type {import('vue').ShallowRef<string[]>} */
 const profileNameList = shallowRef([])
 
-/** @type {import('vue').ComputedRef<'local' | 'invidious'>} */
-const backendPreference = computed(() => {
-  return store.getters.getBackendPreference
-})
-
-/** @type {import('vue').ComputedRef<string>} */
-const currentInvidiousInstanceUrl = computed(() => {
-  return store.getters.getCurrentInvidiousInstanceUrl
-})
-
 const intlCollator = computed(() => {
   return new Intl.Collator([locale.value, 'en'], { sensitivity: 'base' })
 })
@@ -140,14 +129,6 @@ function loadChannels() {
   const collator = intlCollator.value
 
   channels_.sort((a, b) => collator.compare(a.name, b.name))
-
-  if (backendPreference.value === 'invidious') {
-    const instanceUrl = currentInvidiousInstanceUrl.value
-
-    channels_.forEach((channel) => {
-      channel.thumbnail = youtubeImageUrlToInvidious(channel.thumbnail, instanceUrl)
-    })
-  }
 
   channels.value = channels_
 }

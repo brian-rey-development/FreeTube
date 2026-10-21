@@ -203,7 +203,7 @@ import {
   deepCopy,
   throttle,
 } from '../../helpers/utils'
-import { invidiousGetPlaylistInfo, youtubeImageUrlToInvidious } from '../../helpers/api/invidious'
+import { invidiousGetPlaylistInfo, normalizeYoutubeImageUrl } from '../../helpers/api/invidious'
 import { getSortedPlaylistItems, videoDurationPresent, videoDurationWithFallback, SORT_BY_VALUES } from '../../helpers/playlists'
 import { MOBILE_WIDTH_THRESHOLD, PLAYLIST_HEIGHT_FORCE_LIST_THRESHOLD } from '../../../constants'
 
@@ -251,9 +251,6 @@ const backendPreference = computed(() => store.getters.getBackendPreference)
 
 /** @type {import('vue').ComputedRef<boolean>} */
 const backendFallback = computed(() => store.getters.getBackendFallback)
-
-/** @type {import('vue').ComputedRef<string>} */
-const currentInvidiousInstanceUrl = computed(() => store.getters.getCurrentInvidiousInstanceUrl)
 
 /** @type {import('vue').ComputedRef<string>} */
 const userPlaylistSortOrder = computed(() => store.getters.getUserPlaylistSortOrder)
@@ -525,7 +522,7 @@ async function getPlaylistInvidious() {
     viewCount.value = result.viewCount
     videoCount.value = result.videoCount
     channelName.value = result.author
-    channelThumbnail.value = youtubeImageUrlToInvidious(result.authorThumbnails[2].url, currentInvidiousInstanceUrl.value)
+    channelThumbnail.value = normalizeYoutubeImageUrl(result.authorThumbnails[2].url)
     channelId.value = result.authorId
     infoSource.value = 'invidious'
 

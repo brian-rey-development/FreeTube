@@ -188,7 +188,7 @@ import {
   formatNumber,
   getRelativeTimeFromDate,
 } from '../../helpers/utils'
-import { youtubeImageUrlToInvidious } from '../../helpers/api/invidious'
+import { normalizeYoutubeImageUrl } from '../../helpers/api/invidious'
 
 const props = defineProps({
   data: {
@@ -226,11 +226,6 @@ const hideVideo = computed(() => {
 
 /** @type {import('vue').ComputedRef<boolean>} */
 const hideSharingActions = computed(() => store.getters.getHideSharingActions)
-
-/** @type {import('vue').ComputedRef<'local' | 'invidious'>} */
-const backendPreference = computed(() => {
-  return store.getters.getBackendPreference
-})
 
 let postType = ''
 let postText = ''
@@ -272,10 +267,6 @@ function parseCommunityData() {
 
     authorThumbnail = 'https://yt3.ggpht.com/ytc/AAUvwnjm-0qglHJkAHqLFsCQQO97G7cCNDuDLldsrn25Lg=s88-c-k-c0x00ffffff-no-rj'
 
-    if (!process.env.SUPPORTS_LOCAL_API || backendPreference.value === 'invidious') {
-      authorThumbnail = youtubeImageUrlToInvidious(authorThumbnail)
-    }
-
     return
   }
 
@@ -288,13 +279,7 @@ function parseCommunityData() {
   author = props.data.author
   authorId = props.data.authorId
 
-  authorThumbnail = getBestQualityImage(props.data.authorThumbnails)
-
-  if (!process.env.SUPPORTS_LOCAL_API || backendPreference.value === 'invidious') {
-    authorThumbnail = youtubeImageUrlToInvidious(authorThumbnail)
-  } else if (authorThumbnail.startsWith('//')) {
-    authorThumbnail = 'https:' + authorThumbnail
-  }
+  authorThumbnail = normalizeYoutubeImageUrl(getBestQualityImage(props.data.authorThumbnails))
 }
 
 /**

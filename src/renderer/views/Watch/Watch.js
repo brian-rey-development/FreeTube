@@ -36,7 +36,7 @@ import {
   getProxyUrl,
   invidiousGetVideoInformation,
   mapInvidiousLegacyFormat,
-  youtubeImageUrlToInvidious
+  normalizeYoutubeImageUrl
 } from '../../helpers/api/invidious'
 import { sortCaptions } from '../../helpers/player/utils'
 import { MANIFEST_TYPE_SABR } from '../../helpers/player/SabrManifestParser'
@@ -1004,7 +1004,7 @@ export default defineComponent({
           this.channelId = result.authorId
           this.channelName = result.author
           const channelThumb = result.authorThumbnails[1]
-          this.channelThumbnail = channelThumb ? youtubeImageUrlToInvidious(channelThumb.url, this.currentInvidiousInstanceUrl) : ''
+          this.channelThumbnail = channelThumb ? normalizeYoutubeImageUrl(channelThumb.url) : ''
           this.updateSubscriptionDetails({
             channelThumbnailUrl: channelThumb?.url,
             channelName: result.author,
@@ -1046,16 +1046,16 @@ export default defineComponent({
 
           switch (this.thumbnailPreference) {
             case 'start':
-              this.thumbnail = `${this.currentInvidiousInstanceUrl}/vi/${this.videoId}/maxres1.jpg`
+              this.thumbnail = `https://i.ytimg.com/vi/${this.videoId}/maxres1.jpg`
               break
             case 'middle':
-              this.thumbnail = `${this.currentInvidiousInstanceUrl}/vi/${this.videoId}/maxres2.jpg`
+              this.thumbnail = `https://i.ytimg.com/vi/${this.videoId}/maxres2.jpg`
               break
             case 'end':
-              this.thumbnail = `${this.currentInvidiousInstanceUrl}/vi/${this.videoId}/maxres3.jpg`
+              this.thumbnail = `https://i.ytimg.com/vi/${this.videoId}/maxres3.jpg`
               break
             default:
-              this.thumbnail = result.videoThumbnails[0].url
+              this.thumbnail = `https://i.ytimg.com/vi/${this.videoId}/maxresdefault.jpg`
               break
           }
 

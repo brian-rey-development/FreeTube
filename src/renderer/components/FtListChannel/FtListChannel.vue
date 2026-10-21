@@ -87,7 +87,7 @@ import { vSaferHtml } from '../../directives/vSaferHtml'
 
 import store from '../../store/index'
 
-import { youtubeImageUrlToInvidious } from '../../helpers/api/invidious'
+import { normalizeYoutubeImageUrl } from '../../helpers/api/invidious'
 import { formatNumber } from '../../helpers/utils'
 
 const props = defineProps({
@@ -99,11 +99,6 @@ const props = defineProps({
     type: String,
     required: true
   }
-})
-
-/** @type {import('vue').ComputedRef<string>} */
-const currentInvidiousInstanceUrl = computed(() => {
-  return store.getters.getCurrentInvidiousInstanceUrl
 })
 
 /** @type {import('vue').ComputedRef<'grid' | 'list'>} */
@@ -183,7 +178,7 @@ function parseInvidiousData() {
   /** @type {string} */
   const thumbnailUrl = props.data.authorThumbnails[2].url
 
-  thumbnail = youtubeImageUrlToInvidious(thumbnailUrl, currentInvidiousInstanceUrl.value)
+  thumbnail = normalizeYoutubeImageUrl(thumbnailUrl)
 
   name = props.data.author
   id = props.data.authorId

@@ -235,7 +235,6 @@ import SideNavMoreOptions from '../SideNavMoreOptions/SideNavMoreOptions.vue'
 
 import store from '../../store/index'
 
-import { youtubeImageUrlToInvidious } from '../../helpers/api/invidious'
 import { deepCopy, localizeAndAddKeyboardShortcutToActionTitle } from '../../helpers/utils'
 import { KeyboardShortcuts } from '../../../constants'
 
@@ -258,11 +257,6 @@ const backendPreference = computed(() => {
   return store.getters.getBackendPreference
 })
 
-/** @type {import('vue').ComputedRef<string>} */
-const currentInvidiousInstanceUrl = computed(() => {
-  return store.getters.getCurrentInvidiousInstanceUrl
-})
-
 /** @type {import('vue').ComputedRef<object>} */
 const activeProfile = computed(() => {
   return store.getters.getActiveProfile
@@ -282,14 +276,6 @@ const activeSubscriptions = computed(() => {
   subscriptions.sort((a, b) => {
     return a.name?.toLowerCase().localeCompare(b.name?.toLowerCase(), locale_)
   })
-
-  if (backendPreference.value === 'invidious') {
-    const instanceUrl = currentInvidiousInstanceUrl.value
-
-    subscriptions.forEach((channel) => {
-      channel.thumbnail = youtubeImageUrlToInvidious(channel.thumbnail, instanceUrl)
-    })
-  }
 
   return subscriptions
 })

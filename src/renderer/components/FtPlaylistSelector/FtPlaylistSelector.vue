@@ -90,12 +90,6 @@ const { t } = useI18n()
 
 const videoPresenceCountInPlaylistTextShouldBeVisible = ref(false)
 
-/** @type {import('vue').ComputedRef<'local' | 'invidious'>} */
-const backendPreference = computed(() => store.getters.getBackendPreference)
-
-/** @type {import('vue').ComputedRef<string>} */
-const currentInvidiousInstanceUrl = computed(() => store.getters.getCurrentInvidiousInstanceUrl)
-
 /** @type {import('vue').ComputedRef<object[]>} */
 const toBeAddedToPlaylistVideoList = computed(() => store.getters.getToBeAddedToPlaylistVideoList)
 
@@ -177,11 +171,7 @@ const videoPresenceCountInPlaylistTextVisible = computed(() => {
 const thumbnail = ref(thumbnailPlaceholder)
 
 if (props.playlist.videos.length > 0) {
-  const origin = backendPreference.value === 'invidious'
-    ? currentInvidiousInstanceUrl.value
-    : 'https://i.ytimg.com'
-
-  thumbnail.value = `${origin}/vi/${props.playlist.videos[0].videoId}/mqdefault.jpg`
+  thumbnail.value = `https://i.ytimg.com/vi/${props.playlist.videos[0].videoId}/mqdefault.jpg`
 }
 
 function toggleSelection() {
