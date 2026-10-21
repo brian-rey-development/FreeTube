@@ -1,0 +1,136 @@
+.soft {
+  .routerView .card > .count {
+    max-inline-size: 720px;
+    margin-block: 16px 8px !important;
+    margin-inline: 0 !important;
+    font-size: 13px !important;
+    line-height: 1.4;
+    color: var(--text-3) !important;
+    justify-content: flex-start !important;
+  }
+
+  .routerView .card > .channels {
+    display: flex !important;
+    flex-direction: column;
+    gap: 0 !important;
+    max-inline-size: 720px;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .routerView .card > .channels .channel {
+    display: grid !important;
+    grid-template-columns: 40px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0 14px !important;
+    padding-block: 12px !important;
+    padding-inline: 0 !important;
+    margin: 0 !important;
+    text-align: start;
+    background: transparent !important;
+    border: 0 !important;
+    border-block-end: 1px solid var(--line) !important;
+    border-radius: 0 !important;
+  }
+
+  .routerView .card > .channels .channel:last-child {
+    border-block-end-color: transparent !important;
+  }
+
+  .routerView .card > .channels .thumbnailContainer {
+    inline-size: 40px;
+    block-size: 40px;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .routerView .card > .channels .channelThumbnail {
+    inline-size: 40px !important;
+    block-size: 40px !important;
+    border-radius: 50% !important;
+    object-fit: cover;
+    margin: 0 !important;
+    display: block;
+  }
+
+  .routerView .card > .channels .channelName {
+    min-inline-size: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.005em;
+    line-height: 1.3;
+    text-align: start !important;
+    color: var(--text-1) !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-decoration: none !important;
+  }
+
+  .routerView .card > .channels .channelName:hover {
+    text-decoration: underline !important;
+    text-decoration-color: var(--text-3);
+    text-underline-offset: 3px;
+  }
+
+  .routerView .card > .channels .unsubscribeContainer {
+    margin: 0 !important;
+    justify-content: flex-end;
+  }
+
+  .routerView .ftSubscribeButton {
+    --sb-h: 36px;
+  }
+
+  .routerView .card > .channels .ftSubscribeButton {
+    --sb-h: 34px;
+  }
+
+  .routerView .ftSubscribeButton .buttonList {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0 !important;
+    margin: 0 !important;
+    overflow: hidden;
+    border-radius: var(--pill) !important;
+  }
+
+  .routerView .ftSubscribeButton .btn {
+    block-size: var(--sb-h);
+    min-block-size: var(--sb-h) !important;
+    margin: 0 !important;
+    padding-block: 0 !important;
+    padding-inline: 14px !important;
+    border-radius: 0 !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    line-height: 1;
+    background: var(--surface-2) !important;
+    color: var(--text-1) !important;
+  }
+
+  .routerView .ftSubscribeButton .btn:hover {
+    background: var(--surface-3) !important;
+  }
+
+  .routerView .ftSubscribeButton .subscribeButton {
+    border: 0 !important;
+    padding-inline-start: 16px !important;
+  }
+
+  .routerView .ftSubscribeButton .subscribeButton.hasProfileDropdownToggle {
+    padding-inline-end: 12px !important;
+  }
+
+  .routerView .ftSubscribeButton .profileDropdownToggle {
+    box-sizing: border-box;
+    inline-size: 36px;
+    padding: 0 !important;
+    border: 0 !important;
+    border-inline-start: 1px solid var(--line-strong) !important;
+    justify-content: center;
+    align-items: center;
+  }
+}

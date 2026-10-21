@@ -62,7 +62,8 @@ body:not(.hotPink, .pastelPink) {
 .light,
 .system[data-system-theme*='dark'],
 .dark,
-.black {
+.black,
+.soft {
   --logo-icon: url('../../_icons/iconColorSmall.svg');
   --logo-text: url('../../_icons/textColorSmall.svg');
   --logo-primary-color: #f33;
@@ -73,7 +74,8 @@ body:not(.hotPink, .pastelPink) {
 /* Text "app" should be visible but retain FreeTube color logo */
 .system[data-system-theme*='dark'],
 .dark,
-.black {
+.black,
+.soft {
   --logo-tertiary-color: #fff;
 }
 
@@ -113,7 +115,8 @@ it can be safely elided. This looks quite pleasant on this theme. */
 .catppuccinFrappe,
 .everforestDarkHard,
 .everforestDarkMedium,
-.everforestDarkLow {
+.everforestDarkLow,
+.soft {
   --primary-shadow-color: rgb(0 0 0 / 75%);
 
   .invidiousLogo {

@@ -7,6 +7,8 @@ import { showExternalPlayerUnsupportedActionToast, showToast } from './helpers/u
 import { library } from './fontawesome-minimal'
 // import the styles
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import '@fontsource-variable/plus-jakarta-sans/wght.css'
+import '@fontsource-variable/geist-mono/wght.css'
 
 import { register as registerSwiper } from 'swiper/element'
 

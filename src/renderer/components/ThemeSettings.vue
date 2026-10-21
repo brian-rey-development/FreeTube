@@ -126,6 +126,7 @@ const BASE_THEME_VALUES = [
   'nordic',
   'hotPink',
   'pastelPink',
+  'soft',
   // Third group
   'catppuccinFrappe',
   'catppuccinLatte',
@@ -143,6 +144,8 @@ const BASE_THEME_VALUES = [
   'solarizedLight'
 ]
 
+const BASE_THEMES_WITHOUT_COLOR_THEMES = ['hotPink', 'soft']
+
 const baseThemeNames = computed(() => [
   // First group
   t('Settings.Theme Settings.Base Theme.System Default'),
@@ -153,6 +156,7 @@ const baseThemeNames = computed(() => [
   t('Settings.Theme Settings.Base Theme.Nordic'),
   t('Settings.Theme Settings.Base Theme.Hot Pink'),
   t('Settings.Theme Settings.Base Theme.Pastel Pink'),
+  t('Settings.Theme Settings.Base Theme.Soft'),
   // Third group
   t('Settings.Theme Settings.Base Theme.Catppuccin Frappe'),
   t('Settings.Theme Settings.Base Theme.Catppuccin Latte'),
@@ -197,7 +201,7 @@ function updateBaseTheme(value) {
   store.dispatch('updateBaseTheme', value)
 }
 
-const areColorThemesEnabled = computed(() => baseTheme.value !== 'hotPink')
+const areColorThemesEnabled = computed(() => !BASE_THEMES_WITHOUT_COLOR_THEMES.includes(baseTheme.value))
 
 /** @type {import('vue').ComputedRef<string>} */
 const mainColor = computed(() => {

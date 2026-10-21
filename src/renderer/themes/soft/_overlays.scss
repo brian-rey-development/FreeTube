@@ -1,0 +1,394 @@
+.soft {
+  &,
+  * {
+    --destructive-color: color-mix(in srgb, var(--danger) 16%, var(--surface-2)) !important;
+    --destructive-hover-color: color-mix(in srgb, var(--danger) 26%, var(--surface-2)) !important;
+    --destructive-active-color: color-mix(in srgb, var(--danger) 34%, var(--surface-2)) !important;
+    --destructive-text-color: var(--danger) !important;
+    --favorite-icon-color: var(--on-ink) !important;
+  }
+
+  .iconDropdown,
+  .topNav .profileList,
+  .ftSubscribeButton .profileDropdown {
+    background: var(--surface-2) !important;
+    border: var(--pop-border) !important;
+    border-radius: var(--menu-r) !important;
+    box-shadow: var(--pop-shadow) !important;
+    box-sizing: border-box;
+    color: var(--text-1) !important;
+    padding: 6px !important;
+    text-align: start !important;
+    z-index: 40 !important;
+  }
+
+  .iconDropdown {
+    min-inline-size: 220px;
+    font-size: 13.5px !important;
+    font-weight: 500;
+  }
+
+  .ft-list-item:has(.iconDropdown),
+  .ft-list-item:has(.optionsButton .iconDropdown) {
+    z-index: 30 !important;
+    position: relative;
+  }
+
+  .iconDropdown .list {
+    display: grid !important;
+    gap: 2px !important;
+  }
+
+  .iconDropdown .listItem {
+    border-radius: max(calc(var(--menu-r) - 6px), 4px) !important;
+    padding-block: 9px !important;
+    padding-inline: 12px !important;
+    color: var(--text-1) !important;
+    text-align: start !important;
+    line-height: 1.35;
+  }
+
+  .iconDropdown .listItem:hover,
+  .iconDropdown .listItem:focus-visible,
+  .iconDropdown .listItem.active,
+  .iconDropdown .listItem.pressed {
+    background: var(--surface-3) !important;
+    color: var(--text-1) !important;
+  }
+
+  .iconDropdown .listItem:active {
+    background: var(--line-strong) !important;
+  }
+
+  .iconDropdown .listItemDivider {
+    border: 0 !important;
+    border-block-start: 1px solid var(--line) !important;
+    inline-size: auto !important;
+    margin-block: 3px !important;
+    margin-inline: 6px !important;
+    opacity: 1 !important;
+    padding: 0 !important;
+    block-size: 0;
+    overflow: hidden;
+  }
+
+  .topNav:has(.profileList:not([style*='display: none'])) {
+    z-index: 6 !important;
+  }
+
+  .topNav .profileList {
+    inset-block-start: 56px !important;
+    inset-inline-end: 16px !important;
+    min-inline-size: 280px !important;
+    padding: 8px !important;
+  }
+
+  .topNav .profileListTitle {
+    position: static !important;
+    margin: 0 !important;
+    padding-block: 10px 12px;
+    padding-inline: 12px;
+    font-size: 12.5px !important;
+    font-weight: 600;
+    line-height: 1.2 !important;
+    color: var(--text-2) !important;
+  }
+
+  .topNav .profileSettings {
+    position: absolute;
+    inset-block-start: 8px;
+    inset-inline-end: 8px;
+  }
+
+  .topNav .profileWrapper {
+    margin: 0 !important;
+    min-block-size: 0 !important;
+    display: grid;
+    gap: 2px;
+  }
+
+  .topNav .profile {
+    display: flex !important;
+    align-items: center;
+    block-size: auto !important;
+    min-block-size: 48px;
+    padding-block: 6px !important;
+    padding-inline: 6px 12px !important;
+    border-radius: max(calc(var(--menu-r) - 8px), 4px);
+    gap: 12px !important;
+    color: var(--text-2) !important;
+  }
+
+  .topNav .profile .colorOption {
+    float: none !important;
+    inset: auto !important;
+    margin: 0 !important;
+    filter: saturate(0.4);
+  }
+
+  .topNav .profiles .colorOption > .initial,
+  .topNav .profileWrapper .colorOption > .initial,
+  .topNav .profile .colorOption > .initial {
+    font-size: 20px;
+    line-height: 1;
+    padding: 0;
+  }
+
+  .topNav .profiles .colorOption,
+  .topNav .profile .colorOption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .topNav .profile .profileName {
+    margin: 0;
+    padding: 0 !important;
+    block-size: auto;
+    font-size: 14px;
+    font-weight: 600;
+    color: inherit !important;
+  }
+
+  .topNav .profile[aria-selected='true'] {
+    color: var(--text-1) !important;
+  }
+
+  .topNav .profile:hover {
+    background: var(--surface-3) !important;
+    color: var(--text-1) !important;
+  }
+
+  .ftSubscribeButton .profileDropdown {
+    margin-block: 6px 0 !important;
+    margin-inline: 0 !important;
+    inline-size: 100% !important;
+    font-size: 13.5px !important;
+  }
+
+  .iconButton:not(.ft-list-item .iconButton) {
+    border-radius: var(--icon-btn-r) !important;
+    box-shadow: none !important;
+  }
+
+  .iconButton.base:not(.ft-list-item .iconButton),
+  .iconButton.primary:not(.ft-list-item .iconButton),
+  .iconButton.secondary:not(.ft-list-item .iconButton) {
+    background: transparent !important;
+    color: var(--text-2) !important;
+  }
+
+  .iconButton.base:not(.disabled, .ft-list-item .iconButton):is(:hover, :focus-visible, .pressed, .active),
+  .iconButton.primary:not(.disabled, .ft-list-item .iconButton):is(:hover, :focus-visible, .pressed, .active),
+  .iconButton.secondary:not(.disabled, .ft-list-item .iconButton):is(:hover, :focus-visible, .pressed, .active) {
+    background: var(--surface-3) !important;
+    color: var(--text-1) !important;
+  }
+
+  .iconButton.destructive:not(.ft-list-item .iconButton) {
+    background: transparent !important;
+    color: var(--danger) !important;
+  }
+
+  .iconButton.destructive:not(.disabled, .ft-list-item .iconButton):is(:hover, :focus-visible, .pressed) {
+    background: var(--destructive-hover-color) !important;
+  }
+
+  .ftIconButton .iconButton.base.favorite:not(.disabled, .ft-list-item .iconButton),
+  .ft-list-item .ftIconButton .iconButton.favorite {
+    background: var(--ink) !important;
+    color: var(--on-ink) !important;
+  }
+
+  .ftIconButton .iconButton.base.favorite:not(.disabled, .ft-list-item .iconButton):is(:hover, :focus-visible),
+  .ft-list-item .ftIconButton .iconButton.favorite:is(:hover, :focus-visible) {
+    background: var(--ink-soft) !important;
+    color: var(--on-ink) !important;
+  }
+
+  .btn {
+    color: var(--text-1) !important;
+    background: var(--surface-2) !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .btn:not(:disabled):hover {
+    background: var(--surface-3) !important;
+  }
+
+  .btn[style*='--primary-color']:not(.subscribeButton, .profileDropdownToggle) {
+    background: var(--ink) !important;
+    color: var(--on-ink) !important;
+  }
+
+  .btn[style*='--primary-color']:not(.subscribeButton, .profileDropdownToggle, :disabled):hover {
+    background: var(--ink-soft) !important;
+  }
+
+  .btn[style*='--destructive-color'] {
+    background: var(--destructive-color) !important;
+    color: var(--danger) !important;
+  }
+
+  .btn[style*='--destructive-color']:not(:disabled):hover {
+    background: var(--destructive-hover-color) !important;
+  }
+
+  .btn:disabled,
+  .btn[disabled] {
+    opacity: 0.4 !important;
+    cursor: not-allowed;
+  }
+
+  .ftSubscribeButton .buttonList {
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: var(--control-r) !important;
+    margin: 0 !important;
+  }
+
+  .ftSubscribeButton .btn {
+    margin: 0 !important;
+    background: var(--surface-2) !important;
+    color: var(--text-1) !important;
+    border-color: transparent !important;
+  }
+
+  .ftSubscribeButton .btn:hover {
+    background: var(--surface-3) !important;
+  }
+
+  .ftSubscribeButton .subscribeButton.hasProfileDropdownToggle {
+    border-inline-end: 1px solid var(--line) !important;
+  }
+
+  .toast-holder {
+    z-index: 400 !important;
+  }
+
+  .toast,
+  .tooltip .text {
+    background: var(--surface-3) !important;
+    border: var(--pop-border);
+    border-radius: var(--menu-r) !important;
+    box-shadow: var(--pop-shadow);
+    color: var(--text-1) !important;
+    font-weight: 500;
+  }
+
+  .toast {
+    font-size: 13.5px;
+    padding-block: 12px !important;
+    padding-inline: 18px !important;
+  }
+
+  .tooltip .text {
+    font-size: 12.5px !important;
+    line-height: 1.4 !important;
+    min-inline-size: 13em !important;
+    padding-block: 8px !important;
+    padding-inline: 12px !important;
+  }
+
+  .iconDropdown .shareLinks .buttons {
+    display: grid;
+    gap: 2px;
+  }
+
+  .iconDropdown .shareLinks .header {
+    justify-content: flex-start;
+    margin: 0 !important;
+    padding-block: 8px 6px;
+    padding-inline: 12px;
+    font-size: 13px;
+    color: var(--text-2) !important;
+  }
+
+  .iconDropdown .shareLinks .header.invidious {
+    margin-block-start: 6px !important;
+    border-block-start: 1px solid var(--line);
+    padding-block-start: 12px;
+  }
+
+  .iconDropdown .shareLinks .btn.action {
+    background: transparent !important;
+    justify-content: flex-start;
+    gap: 12px;
+    margin: 0 !important;
+    min-block-size: 40px;
+    padding-block: 0 !important;
+    padding-inline: 12px !important;
+    font-size: 13.5px !important;
+    font-weight: 500 !important;
+    border-radius: max(calc(var(--menu-r) - 6px), 4px) !important;
+    border-color: transparent !important;
+    white-space: nowrap;
+  }
+
+  .iconDropdown .shareLinks .btn.action:hover {
+    background: var(--surface-3) !important;
+  }
+
+  .promptCard:not(:has(.actions-container)) {
+    --dialog-w: 460px;
+
+    display: flex !important;
+    flex-direction: column;
+    gap: 20px;
+    padding: var(--prompt-pad) !important;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+
+  .promptCard:not(:has(.actions-container)) > h2 {
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: start !important;
+    font-size: 20px !important;
+    line-height: 1.35;
+  }
+
+  .promptCard:not(:has(.actions-container)) > p {
+    margin: 0 !important;
+    color: var(--text-2);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .promptCard:not(:has(.actions-container)) > .ft-flex-box {
+    margin: 0 !important;
+    padding: 0 !important;
+    inline-size: 100%;
+    gap: 10px;
+  }
+
+  .promptCard:not(:has(.actions-container)) > .ft-flex-box:last-child {
+    flex-flow: row-reverse wrap;
+    justify-content: flex-start;
+  }
+
+  .promptCard:not(:has(.actions-container)) .btn {
+    margin: 0 !important;
+    min-inline-size: 96px;
+  }
+
+  .promptCard:not(:has(.actions-container)) > .ft-flex-box:last-child > .btn:first-child:not([style*='--destructive-color']) {
+    background: var(--ink) !important;
+    color: var(--on-ink) !important;
+    border-color: var(--ink) !important;
+  }
+
+  .promptCard:not(:has(.actions-container)) > .ft-flex-box:last-child > .btn:first-child:not(:disabled, [style*='--destructive-color']):hover {
+    background: var(--ink-soft) !important;
+  }
+
+  .promptCard .ft-input-component,
+  .promptCard .ft-input-component .inputWrapper,
+  .promptCard input.ft-input {
+    inline-size: 100% !important;
+    max-inline-size: none !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+  }
+}

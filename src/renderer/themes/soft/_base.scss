@@ -1,0 +1,181 @@
+.soft {
+  .topNav,
+  .sideNav,
+  .floatingRefreshSection,
+  .ft-card,
+  .routerView .card {
+    box-shadow: none !important;
+  }
+
+  .card > h2 svg,
+  .promptCard h2 svg {
+    display: none;
+  }
+
+  .btn {
+    font-family: var(--font-ui) !important;
+    transition: background-color 0.15s, border-color 0.15s !important;
+  }
+
+  .ft-list-item .title,
+  .ft-list-item .h3Title,
+  .ft-list-item .infoLine a {
+    text-decoration: none !important;
+  }
+
+  .ft-list-item .infoLine,
+  .ft-list-item .infoLine a {
+    color: var(--text-2) !important;
+  }
+
+  .ft-list-item .title,
+  .ft-list-item .h3Title {
+    color: var(--text-1) !important;
+  }
+
+  :where(*:not(svg, svg *, code, pre, kbd)) {
+    font-family: var(--font-ui) !important;
+  }
+
+  .sideNav svg.svg-inline--fa,
+  .topNav svg.svg-inline--fa {
+    transform: none !important;
+  }
+
+  .sideNav hr {
+    border: 0 !important;
+    block-size: 1px !important;
+    background: var(--line) !important;
+    opacity: 1 !important;
+  }
+
+  .sideNav:not(.opened) .navOption {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    inline-size: auto !important;
+    block-size: auto !important;
+    margin-block: 2px !important;
+    margin-inline: 6px !important;
+    padding-block: 12px !important;
+    padding-inline: 0 !important;
+    text-align: center;
+  }
+
+  .sideNav:not(.opened) .navOption .thumbnailContainer {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    margin: 0 !important;
+    inline-size: auto !important;
+    block-size: 22px !important;
+  }
+
+  .sideNav:not(.opened) .navLabel {
+    margin: 0 !important;
+    inline-size: 100%;
+    text-align: center !important;
+    font-size: 9.5px !important;
+    letter-spacing: -0.01em !important;
+    white-space: nowrap !important;
+  }
+
+  .sideNav:not(.opened) hr {
+    inline-size: 32px !important;
+    margin-block: 14px !important;
+    margin-inline: auto !important;
+  }
+
+  .sideNav:not(.opened) .navChannel {
+    display: flex !important;
+    justify-content: center;
+    padding-inline: 0 !important;
+  }
+
+  .sideNav.opened .navOption {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 14px;
+    inline-size: auto !important;
+    block-size: auto !important;
+    margin-block: 2px !important;
+    margin-inline: 10px !important;
+    padding-block: 10px !important;
+    padding-inline: 14px !important;
+    text-align: start;
+  }
+
+  .sideNav.opened .navOption .thumbnailContainer {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex: none;
+    margin: 0 !important;
+    inline-size: 24px !important;
+    block-size: 24px !important;
+    position: static !important;
+    inset: auto !important;
+    transform: none !important;
+  }
+
+  .sideNav.opened .navLabel {
+    margin: 0 !important;
+    font-size: 13.5px !important;
+    letter-spacing: 0 !important;
+    text-align: start !important;
+    white-space: nowrap !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .sideNav.opened hr {
+    inline-size: auto !important;
+    margin-block: 12px !important;
+    margin-inline: 24px !important;
+  }
+
+  .sideNav.opened .navChannel {
+    display: flex !important;
+    align-items: center;
+    gap: 14px;
+    margin-block: 2px !important;
+    margin-inline: 10px !important;
+    padding-block: 8px !important;
+    padding-inline: 14px !important;
+    border-radius: var(--r);
+  }
+
+  .sideNav.opened .navChannel .thumbnailContainer {
+    display: flex !important;
+    flex: none;
+    margin: 0 !important;
+    inline-size: 24px !important;
+    block-size: 24px !important;
+  }
+
+  .sideNav.opened .navChannel .channelThumbnail {
+    inline-size: 24px !important;
+    block-size: 24px !important;
+    border-radius: 50%;
+  }
+
+  .sideNav .navOption .navIcon {
+    margin: 0 !important;
+  }
+}
+
+:root:has(> .soft),
+.soft {
+  ::-webkit-scrollbar {
+    inline-size: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    border: 3px solid transparent;
+  }
+}

@@ -1,0 +1,464 @@
+.soft {
+  .select-container {
+    --tb-h: 36px;
+
+    display: flex !important;
+    flex-flow: row wrap;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 12px;
+    margin-block: 0 20px !important;
+    margin-inline: 0 !important;
+    padding: 0 !important;
+    block-size: auto !important;
+    min-block-size: 0;
+  }
+
+  .select-container > .btn {
+    margin: 0 !important;
+    min-block-size: 0 !important;
+    block-size: var(--tb-h) !important;
+    padding-block: 0 !important;
+    padding-inline: 16px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    border-radius: var(--control-r) !important;
+    background: var(--surface-2) !important;
+    color: var(--text-1) !important;
+    flex: none;
+  }
+
+  .select-container > .btn:hover {
+    background: var(--surface-3) !important;
+  }
+
+  .select-container > .select:not([style*='display: none']),
+  .card > .optionsRow > .sortSelect {
+    position: relative;
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+    inline-size: auto !important;
+    block-size: var(--tb-h);
+    margin: 0 !important;
+    padding: 0 !important;
+    flex: none;
+  }
+
+  .select-container > .select .select-label,
+  .card > .optionsRow > .sortSelect .select-label {
+    position: static !important;
+    inset: auto !important;
+    transform: none !important;
+    order: -1;
+    display: flex !important;
+    align-items: center;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    line-height: 1;
+    color: var(--text-2) !important;
+    white-space: nowrap;
+    transition: none !important;
+  }
+
+  .select-container > .select .select-label svg,
+  .card > .optionsRow > .sortSelect .select-label svg {
+    display: none;
+  }
+
+  .select-container > .select .select-text,
+  .card > .optionsRow > .sortSelect .select-text {
+    appearance: none;
+    box-sizing: border-box;
+    inline-size: 180px !important;
+    block-size: var(--tb-h) !important;
+    margin: 0 !important;
+    padding-block: 0 !important;
+    padding-inline: 14px 36px !important;
+    border: 0 !important;
+    border-radius: var(--field-r) !important;
+    background: var(--surface-2) !important;
+    color: var(--text-1) !important;
+    font-family: inherit;
+    font-size: 13px !important;
+    font-weight: 500;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background 0.15s, box-shadow 0.15s;
+  }
+
+  .select-container > .select .select-text:hover,
+  .card > .optionsRow > .sortSelect .select-text:hover {
+    background: var(--surface-3) !important;
+  }
+
+  /* stylelint-disable-next-line a11y/no-outline-none -- the box-shadow ring is the focus indicator */
+  .select-container > .select .select-text:focus-visible,
+  .card > .optionsRow > .sortSelect .select-text:focus-visible {
+    outline: none;
+    background: var(--surface-3) !important;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--ink) 18%, transparent);
+  }
+
+  .select-container > .select .select-text option,
+  .card > .optionsRow > .sortSelect .select-text option {
+    background: var(--surface-2);
+    color: var(--text-1);
+  }
+
+  .select-container > .select > svg.iconSelect,
+  .card > .optionsRow > .sortSelect > svg.iconSelect {
+    position: absolute !important;
+    inset-block: 50% auto !important;
+    inset-inline: auto 12px !important;
+    transform: translateY(-50%);
+    margin: 0 !important;
+    inline-size: 14px !important;
+    block-size: 14px !important;
+    font-size: 14px !important;
+    color: var(--text-2);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .select-container > .select .select-highlight,
+  .select-container > .select .select-bar,
+  .card > .optionsRow > .sortSelect .select-highlight,
+  .card > .optionsRow > .sortSelect .select-bar {
+    display: none !important;
+  }
+
+  .card:has(> .optionsRow) {
+    --tb-h: 40px;
+
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 12px 16px;
+  }
+
+  .card:has(> .optionsRow) > :not(.ft-input-component, .optionsRow) {
+    flex: 1 1 100%;
+    min-inline-size: 0;
+  }
+
+  .card:has(> .optionsRow) > h2 {
+    margin-block-end: 8px;
+  }
+
+  .card:has(> .optionsRow) > .ft-input-component {
+    flex: 1 1 320px;
+    inline-size: auto;
+    max-inline-size: 520px;
+    min-inline-size: 0;
+    margin: 0 !important;
+  }
+
+  .card:has(> .optionsRow) > .ft-input-component input.ft-input {
+    block-size: var(--tb-h) !important;
+  }
+
+  .card:has(> .optionsRow) > .optionsRow {
+    display: contents !important;
+  }
+
+  .card:has(> .optionsRow) > .optionsRow > .switch-ctn {
+    margin: 0 !important;
+    padding: 0 !important;
+    inset: auto !important;
+    block-size: var(--tb-h);
+    display: flex;
+    align-items: center;
+    flex: none;
+  }
+
+  .card:has(> .optionsRow) > .optionsRow > .sortSelect .select-text {
+    inline-size: 220px !important;
+  }
+
+  .card:has(> .optionsRow) > .optionsRow .switch-label-text {
+    font-size: 13.5px !important;
+  }
+
+  .card:has(> .optionsRow) > .grid {
+    margin-block-start: 12px;
+  }
+
+  .card:has(> .optionsRow) > .ft-flex-box {
+    justify-content: flex-start !important;
+    text-align: start !important;
+  }
+
+  .card:has(> .optionsRow) > .ft-flex-box > p,
+  .card:has(> .optionsRow) > .ft-flex-box > .message {
+    margin-block: 4px 0 !important;
+    margin-inline: 0 !important;
+    text-align: start !important;
+    color: var(--text-2) !important;
+    font-size: 14px;
+  }
+
+  .watchVideoPlaylist > div {
+    display: flex;
+    flex-direction: column;
+    min-inline-size: 0;
+  }
+
+  .watchVideoPlaylist .playlistTitle {
+    margin-block: 0 6px !important;
+    margin-inline: 0 !important;
+    font-size: 15px !important;
+    font-weight: 650 !important;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+
+  .watchVideoPlaylist .playlistTitleLink {
+    color: var(--text-1) !important;
+    text-decoration: none !important;
+  }
+
+  .watchVideoPlaylist .playlistIndex {
+    position: static !important;
+    display: flex !important;
+    align-items: center;
+    gap: 12px;
+    margin-block: 0 10px !important;
+    margin-inline: 0 !important;
+    padding: 0 !important;
+  }
+
+  .watchVideoPlaylist .playlistIndex > label {
+    flex: none;
+    font-size: 12px;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    color: var(--text-3);
+  }
+
+  .watchVideoPlaylist .playlistProgressBarContainer {
+    position: static !important;
+    flex: 1 1 auto;
+    min-inline-size: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .watchVideoPlaylist .playlistProgressBar {
+    position: relative !important;
+    inset: auto !important;
+    inline-size: auto !important;
+    block-size: 3px !important;
+    margin: 0 !important;
+    border-radius: 999px;
+    background: var(--surface-3) !important;
+    overflow: hidden;
+  }
+
+  .watchVideoPlaylist .playlistProgressBarFill {
+    position: static !important;
+    block-size: 100% !important;
+    border-radius: 999px;
+    background: var(--text-2) !important;
+  }
+
+  .watchVideoPlaylist .playlistButtons {
+    display: flex !important;
+    align-items: center;
+    gap: 4px;
+    margin-block: 0 8px !important;
+    margin-inline: 0 !important;
+    padding: 0 !important;
+    block-size: auto !important;
+  }
+
+  .watchVideoPlaylist .playlistButton {
+    display: grid !important;
+    place-items: center;
+    inline-size: 34px;
+    block-size: 34px;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: var(--icon-btn-r);
+    background: transparent !important;
+    color: var(--text-3) !important;
+    font-size: 16px !important;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .watchVideoPlaylist .playlistButton:hover {
+    background: var(--surface-2) !important;
+    color: var(--text-1) !important;
+  }
+
+  .watchVideoPlaylist .playlistButton[aria-pressed='true'] {
+    background: var(--surface-3) !important;
+    color: var(--text-1) !important;
+  }
+
+  .watchVideoPlaylist .playlistButton svg {
+    inline-size: 16px !important;
+    block-size: 16px !important;
+    margin: 0 !important;
+  }
+
+  .watchVideoPlaylist .playlistItemsWrapper {
+    scrollbar-width: thin;
+    scrollbar-color: var(--line-strong) transparent;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden auto;
+  }
+
+  .watchVideoPlaylist .playlistItemsWrapper::-webkit-scrollbar {
+    inline-size: 8px;
+  }
+
+  .watchVideoPlaylist .playlistItemsWrapper::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .watchVideoPlaylist .playlistItemsWrapper::-webkit-scrollbar-thumb {
+    background: var(--line-strong);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  .watchVideoPlaylist .playlistItem:not(.placeholder) {
+    display: grid !important;
+    grid-template-columns: 28px minmax(0, 1fr);
+    align-items: center;
+    column-gap: 0;
+    margin-block: 0 2px !important;
+    margin-inline: 0 !important;
+    padding: 0 !important;
+    border-radius: var(--r);
+  }
+
+  .watchVideoPlaylist .playlistItem:has(a.router-link-exact-active) {
+    background: var(--surface-2);
+  }
+
+  .watchVideoPlaylist .videoIndexArea {
+    display: grid;
+    place-items: center;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 12px;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    color: var(--text-3) !important;
+  }
+
+  .watchVideoPlaylist .videoIndexArea svg {
+    inline-size: 11px;
+    block-size: 11px;
+  }
+
+  .watchVideoPlaylist .playlistItem:has(a.router-link-exact-active) .videoIndexArea {
+    color: var(--text-1) !important;
+  }
+
+  .watchVideoPlaylist .watchPlaylistItem {
+    display: grid !important;
+    grid-template: 'thumbnail info' auto / 120px minmax(0, 1fr) !important;
+    align-items: start;
+    gap: 0 12px !important;
+    margin: 0 !important;
+    padding-block: 8px !important;
+    padding-inline: 0 8px !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .watchVideoPlaylist .watchPlaylistItem .videoThumbnail {
+    inline-size: 120px !important;
+    max-inline-size: none !important;
+    aspect-ratio: 16 / 9;
+    block-size: auto !important;
+    margin: 0 !important;
+    border-radius: var(--r);
+    overflow: hidden;
+  }
+
+  .watchVideoPlaylist .watchPlaylistItem .thumbnailLink,
+  .watchVideoPlaylist .watchPlaylistItem .thumbnailImage {
+    inline-size: 100% !important;
+    block-size: 100% !important;
+    max-inline-size: none !important;
+    object-fit: cover;
+  }
+
+  .watchVideoPlaylist .watchPlaylistItem .h3Title {
+    margin: 0 !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    line-height: 1.35;
+    letter-spacing: -0.005em;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+  }
+
+  .watchVideoPlaylist .watchPlaylistItem .info {
+    position: relative;
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 3px !important;
+    margin: 0 !important;
+    padding-block: 0 !important;
+    padding-inline: 0 28px !important;
+    min-inline-size: 0;
+  }
+
+  .watchVideoPlaylist .watchPlaylistItem .info > .title {
+    grid-area: auto !important;
+    min-inline-size: 0;
+  }
+
+  .watchVideoPlaylist .watchPlaylistItem .infoLine {
+    grid-area: auto !important;
+    margin: 0 !important;
+    font-size: 12px !important;
+    line-height: 1.4;
+    color: var(--text-3) !important;
+  }
+
+  .watchVideoPlaylist .watchPlaylistItem .infoLine * {
+    color: inherit !important;
+    font-size: inherit !important;
+  }
+
+  .watchVideoPlaylist .watchPlaylistItem .restArea {
+    display: none !important;
+  }
+
+  .watchVideoPlaylist .watchPlaylistItem .buttonStack {
+    position: absolute !important;
+    inset-block: -4px auto !important;
+    inset-inline: auto -6px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .watchVideoPlaylist .watchPlaylistItem .buttonStack .iconButton {
+    inline-size: 28px;
+    block-size: 28px;
+    padding: 0 !important;
+    display: grid !important;
+    place-items: center;
+    font-size: 14px !important;
+  }
+}

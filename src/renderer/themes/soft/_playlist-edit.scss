@@ -1,0 +1,64 @@
+.soft {
+  .routerView.playlistPage .playlistInfo .playlistStats .ft-input-component,
+  .routerView.playlistPage .playlistInfo .ft-input-component.descriptionInput {
+    inline-size: 100%;
+    max-inline-size: none;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    box-sizing: border-box;
+  }
+
+  .routerView.playlistPage .playlistInfo .ft-input-component.descriptionInput {
+    margin-block-start: 12px !important;
+  }
+
+  .routerView.playlistPage .playlistInfo .ft-input-component input.ft-input {
+    inline-size: 100% !important;
+    block-size: 46px !important;
+    box-sizing: border-box;
+    border-radius: var(--field-r) !important;
+    padding-block: 0 !important;
+    padding-inline: 18px !important;
+    font-size: 14.5px !important;
+  }
+
+  .ft-list-item .videoThumbnail .playlistIcons {
+    margin-block: 8px 0 !important;
+    margin-inline: 0 8px !important;
+    column-gap: 6px;
+  }
+
+  .ft-list-item .videoThumbnail .playlistIcons .ftIconButton .iconButton {
+    inline-size: 32px !important;
+    block-size: 32px !important;
+    padding: 0 !important;
+    display: grid !important;
+    place-items: center;
+    font-size: 16px !important;
+  }
+
+  .ft-list-item .videoThumbnail .playlistIcons .trashIcon .iconButton:is(:hover, :focus-visible) {
+    color: var(--danger) !important;
+  }
+
+  .ft-list-item .videoThumbnail .videoWatched {
+    place-self: start start;
+    block-size: fit-content;
+    margin-block: 8px 0 !important;
+    margin-inline: 8px 0 !important;
+    padding-block: 2px !important;
+    padding-inline: 8px !important;
+    background: rgb(20 20 22 / 62%) !important;
+    backdrop-filter: blur(12px);
+    color: var(--text-1) !important;
+    border-radius: var(--badge-r, var(--pill)) !important;
+    font-size: 11px !important;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    opacity: 1 !important;
+    text-transform: none;
+  }
+}

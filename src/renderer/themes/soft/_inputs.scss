@@ -1,0 +1,89 @@
+.soft {
+  .routerView .ft-input-component.showClearTextButton {
+    position: relative;
+
+    --ci-size: 28px;
+    --ci-gap: 8px;
+    --ci-inset: 9px;
+  }
+
+  .routerView .ft-input-component.showClearTextButton .inputWrapper {
+    position: static;
+    display: block;
+  }
+
+  .routerView .ft-input-component.showClearTextButton input.ft-input {
+    inline-size: 100%;
+    box-sizing: border-box;
+  }
+
+  .routerView .ft-input-component.showClearTextButton .clearInputTextButton {
+    position: absolute !important;
+    inset-block: 0 !important;
+    inset-inline: var(--ci-inset) auto !important;
+    margin-block: auto !important;
+    margin-inline: 0 !important;
+    inline-size: var(--ci-size) !important;
+    block-size: var(--ci-size) !important;
+    padding: 0 !important;
+    display: grid !important;
+    place-items: center;
+    border: 0 !important;
+    background: transparent !important;
+    color: var(--text-2) !important;
+    border-radius: var(--icon-btn-r) !important;
+    z-index: 1;
+    opacity: 1 !important;
+    transition: opacity 0.12s, background 0.15s, color 0.15s;
+  }
+
+  .routerView .ft-input-component.showClearTextButton .clearInputTextButton:hover {
+    background: var(--surface-3) !important;
+    color: var(--text-1) !important;
+  }
+
+  .routerView .ft-input-component.showClearTextButton .clearInputTextButton .buttonIcon {
+    inline-size: 16px !important;
+    block-size: 16px !important;
+    vertical-align: 0;
+  }
+
+  .routerView .ft-input-component.showClearTextButton.clearTextButtonVisible input.ft-input {
+    padding-inline-start: calc(var(--ci-inset) + var(--ci-size) + var(--ci-gap)) !important;
+  }
+
+  .routerView .ft-input-component.showClearTextButton.showActionButton input.ft-input {
+    padding-inline-end: calc(var(--ci-inset) + var(--ci-size) + var(--ci-gap)) !important;
+  }
+
+  .routerView .ft-input-component.showClearTextButton .inputAction {
+    position: absolute !important;
+    inset-block: 0 !important;
+    inset-inline: auto var(--ci-inset) !important;
+    margin-block: auto !important;
+    margin-inline: 0 !important;
+    inline-size: var(--ci-size) !important;
+    block-size: var(--ci-size) !important;
+    padding: 0 !important;
+    display: grid !important;
+    place-items: center;
+    color: var(--text-2) !important;
+    border-radius: var(--icon-btn-r) !important;
+  }
+
+  .routerView .ft-input-component.showClearTextButton .inputAction.enabled:hover {
+    background: var(--surface-3) !important;
+    color: var(--text-1) !important;
+  }
+
+  .routerView .ft-input-component.showClearTextButton:not(.clearTextButtonVisible) .clearInputTextButton {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  .routerView .ft-input-component.showClearTextButton input.ft-input:focus {
+    box-shadow: inset 0 0 0 1px var(--line-strong) !important;
+    outline: none !important;
+  }
+}

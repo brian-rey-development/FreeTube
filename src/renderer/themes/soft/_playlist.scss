@@ -1,0 +1,176 @@
+.soft {
+  .playlistPage {
+    --tb-h: 36px;
+    --search-h: 40px;
+  }
+
+  .playlistPage .top-bar .playlistOptionsAndSearch {
+    gap: 12px 20px;
+    margin-block-start: 20px;
+  }
+
+  .playlistPage .playlistOptions {
+    align-items: center;
+    gap: 2px;
+  }
+
+  .playlistPage .playlistOptions .ftIconButton {
+    display: flex;
+    align-items: center;
+  }
+
+  .playlistPage .playlistOptions .ftIconButton .iconButton {
+    inline-size: 34px !important;
+    block-size: 34px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: grid !important;
+    place-items: center;
+    border: 0 !important;
+    border-radius: var(--icon-btn-r) !important;
+    background: transparent !important;
+    color: var(--text-2) !important;
+    font-size: 16px !important;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .playlistPage .playlistOptions .ftIconButton .iconButton svg {
+    inline-size: 16px;
+    block-size: 16px;
+  }
+
+  .playlistPage .playlistOptions .ftIconButton .iconButton:not(.disabled):is(:hover, :focus-visible) {
+    background: var(--surface-2) !important;
+    color: var(--text-1) !important;
+  }
+
+  .playlistPage .playlistOptions .ftIconButton .iconButton.destructive:not(.disabled):is(:hover, :focus-visible) {
+    color: var(--danger) !important;
+  }
+
+  .playlistPage .playlistOptions .ftIconButton .iconButton.secondary.disabled {
+    color: var(--text-1) !important;
+    cursor: default;
+  }
+
+  .playlistPage .playlistOptions .ftIconButton .iconButton.destructive.disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+
+  .routerView.playlistPage .playlistInfo .top-bar .searchInputsRow .ft-input-component input.ft-input,
+  .routerView.playlistPage .playlistInfo .searchInputsRow .ft-input-component input.ft-input {
+    block-size: var(--search-h) !important;
+  }
+
+  .playlistPage .playlistItemsCard > .sortSelect {
+    position: relative;
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    inline-size: auto !important;
+    block-size: var(--tb-h);
+    margin-block: 0 16px !important;
+    margin-inline: 0 !important;
+    padding: 0 !important;
+  }
+
+  .playlistPage .playlistItemsCard > .sortSelect .select-label {
+    position: static !important;
+    inset: auto !important;
+    transform: none !important;
+    order: -1;
+    display: flex !important;
+    align-items: center;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    line-height: 1;
+    color: var(--text-2) !important;
+    white-space: nowrap;
+    transition: none !important;
+  }
+
+  .playlistPage .playlistItemsCard > .sortSelect .select-label svg {
+    display: none;
+  }
+
+  .playlistPage .playlistItemsCard > .sortSelect .select-text {
+    appearance: none;
+    box-sizing: border-box;
+    inline-size: 216px !important;
+    block-size: var(--tb-h) !important;
+    margin: 0 !important;
+    padding-block: 0 !important;
+    padding-inline: 14px 36px !important;
+    border: 0 !important;
+    border-radius: var(--field-r) !important;
+    background: var(--surface-2) !important;
+    color: var(--text-1) !important;
+    font-family: inherit;
+    font-size: 13px !important;
+    font-weight: 500;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background 0.15s, box-shadow 0.15s;
+  }
+
+  .playlistPage .playlistItemsCard > .sortSelect .select-text:hover {
+    background: var(--surface-3) !important;
+  }
+
+  /* stylelint-disable-next-line a11y/no-outline-none -- replaced by the box-shadow ring */
+  .playlistPage .playlistItemsCard > .sortSelect .select-text:focus-visible {
+    outline: none;
+    background: var(--surface-3) !important;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--ink) 18%, transparent);
+  }
+
+  .playlistPage .playlistItemsCard > .sortSelect .select-text option {
+    background: var(--surface-2);
+    color: var(--text-1);
+  }
+
+  .playlistPage .playlistItemsCard > .sortSelect > svg.iconSelect {
+    position: absolute !important;
+    inset-block: 50% auto !important;
+    inset-inline: auto 12px !important;
+    transform: translateY(-50%);
+    margin: 0 !important;
+    inline-size: 14px !important;
+    block-size: 14px !important;
+    font-size: 14px !important;
+    color: var(--text-2);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .playlistPage .playlistItemsCard > .sortSelect .select-highlight,
+  .playlistPage .playlistItemsCard > .sortSelect .select-bar {
+    display: none !important;
+  }
+
+  .routerView.playlistPage:not(.list) .playlistInfoContainer {
+    margin-block-end: 16px !important;
+  }
+
+  .routerView.playlistPage .playlistInfo {
+    padding-block-end: 20px !important;
+  }
+
+  .playlistPage .playlistItemsCard .grid:has(> .grid > .ft-list-item) {
+    margin-block-start: 0;
+  }
+
+  .ft-list-item .videoThumbnail .playlistIcons {
+    opacity: 1 !important;
+  }
+
+  .ft-list-item .videoThumbnail .playlistIcons .ftIconButton .iconButton {
+    background: rgb(20 20 22 / 94%) !important;
+  }
+}

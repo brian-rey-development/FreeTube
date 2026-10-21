@@ -937,6 +937,8 @@ function runApp() {
           return '#de1c85'
         case 'nordic':
           return '#2b2f3a'
+        case 'soft':
+          return '#0b0b0d'
         case 'solarized-dark':
           return '#002B36'
         case 'solarized-light':

@@ -1,0 +1,62 @@
+.soft {
+  --bg: #0b0b0d;
+  --surface: #151518;
+  --surface-2: #1f1f23;
+  --surface-3: #2a2a2f;
+  --line: #26262a;
+  --line-strong: #34343a;
+  --text-1: #f5f5f7;
+  --text-2: #a0a0a8;
+  --text-3: #68686f;
+  --ink: #f5f5f7;
+  --ink-soft: #dcdce0;
+  --on-ink: #0b0b0d;
+  --danger: #ff6369;
+  --r: 16px;
+  --r-lg: 24px;
+  --pill: 999px;
+  --control-r: 999px;
+  --field-r: 14px;
+  --menu-r: 18px;
+  --icon-btn-r: 999px;
+  --font-ui: 'Plus Jakarta Sans Variable', -apple-system, system-ui, sans-serif;
+  --font-mono: 'Geist Mono Variable', ui-monospace, monospace;
+  --page-x: 56px;
+  --pop-border: 0 solid transparent;
+  --pop-shadow: 0 0 0 1px rgb(255 255 255 / 5%), 0 18px 48px rgb(0 0 0 / 55%);
+  --prompt-pad: 32px;
+
+  /* Upstream variables, forced so unmodified components read the Soft palette */
+  --primary-color: var(--ink) !important;
+  --primary-color-hover: var(--ink-soft) !important;
+  --primary-color-active: var(--ink-soft) !important;
+  --text-with-main-color: var(--on-ink) !important;
+  --accent-color: var(--ink) !important;
+  --accent-color-hover: var(--ink-soft) !important;
+  --accent-color-active: var(--ink-soft) !important;
+  --accent-color-light: var(--line) !important;
+  --accent-color-visited: var(--text-2) !important;
+  --text-with-accent-color: var(--on-ink) !important;
+  --primary-text-color: var(--text-1) !important;
+  --secondary-text-color: var(--text-2) !important;
+  --tertiary-text-color: var(--text-3) !important;
+  --title-color: var(--text-1) !important;
+  --bg-color: var(--bg) !important;
+  --card-bg-color: var(--surface) !important;
+  --secondary-card-bg-color: var(--surface-2) !important;
+  --side-nav-color: var(--bg) !important;
+  --side-nav-hover-color: var(--surface-2) !important;
+  --side-nav-active-color: var(--surface-2) !important;
+  --side-nav-hover-text-color: var(--text-1) !important;
+  --side-nav-active-text-color: var(--text-1) !important;
+  --search-bar-color: var(--surface) !important;
+  --scrollbar-color: var(--line) !important;
+  --scrollbar-color-hover: var(--text-3) !important;
+  --primary-shadow-color: transparent !important;
+
+  font-size: 14.5px;
+  background: var(--bg) !important;
+  color: var(--text-1);
+  font-family: var(--font-ui) !important;
+  -webkit-font-smoothing: antialiased;
+}

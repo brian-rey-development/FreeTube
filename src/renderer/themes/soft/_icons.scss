@@ -1,0 +1,24 @@
+@use 'icons-map' as *;
+
+.soft {
+  %fa-icon {
+    background-color: currentcolor;
+    block-size: 1.15em !important;
+    inline-size: 1.15em !important;
+    mask: var(--icon) center / contain no-repeat;
+    overflow: visible;
+    vertical-align: -0.2em;
+
+    > * {
+      visibility: hidden;
+    }
+  }
+
+  @each $fa, $lucide in $icons {
+    svg.svg-inline--fa.fa-#{$fa} {
+      @extend %fa-icon;
+
+      --icon: url('lucide-static/icons/#{$lucide}.svg');
+    }
+  }
+}

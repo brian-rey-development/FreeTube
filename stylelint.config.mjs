@@ -16,6 +16,15 @@ export default {
     {
       files: '**/*.css',
       rules: { }
+    },
+    {
+      // Themes restyle existing components, so they mirror the type-qualified selectors
+      // of those components and depend on source order rather than specificity
+      files: 'src/renderer/themes/**/*.scss',
+      rules: {
+        'no-descending-specificity': null,
+        'selector-no-qualifying-type': null
+      }
     }
   ],
   rules: {

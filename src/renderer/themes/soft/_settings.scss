@@ -1,0 +1,1478 @@
+.soft {
+  .settingsPage {
+    --ctl-w: 260px;
+    --sw-w: 40px;
+    --sw-h: 24px;
+    --sw-knob: 18px;
+    --sw-r: 999px;
+    --row-h: 54px;
+    --field-h: 42px;
+    --btn-h: 40px;
+  }
+
+  .settingsPage.routerView {
+    display: grid !important;
+    grid-template-columns: 208px minmax(0, 720px) !important;
+    justify-content: start;
+    align-items: start;
+    gap: 64px !important;
+    padding-block: 20px 40px !important;
+    padding-inline: var(--page-x) !important;
+    box-sizing: border-box;
+    margin: 0 !important;
+    max-inline-size: none !important;
+    inline-size: 100% !important;
+  }
+
+  .settingsPage .settingsContent {
+    min-inline-size: 0;
+  }
+
+  .settingsPage .settingsSections,
+  .settingsPage .switchRow {
+    max-inline-size: none !important;
+    overflow: visible !important;
+  }
+
+  .settingsMenu {
+    inline-size: auto !important;
+    block-size: auto !important;
+    max-block-size: none !important;
+    inset-block-start: 84px !important;
+    gap: 2px;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 14px !important;
+  }
+
+  .settingsMenu .header {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-block: 8px 22px;
+    margin-inline: 0;
+    padding-inline: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: start !important;
+  }
+
+  .settingsMenu .header svg {
+    display: none;
+  }
+
+  .settingsMenu .title {
+    flex: none !important;
+    inline-size: 100% !important;
+    box-sizing: border-box;
+    padding-block: 10px !important;
+    padding-inline: 16px !important;
+    border-radius: var(--control-r);
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: var(--text-2) !important;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .settingsMenu .title:hover {
+    color: var(--text-1) !important;
+  }
+
+  .settingsMenu .title.active {
+    background: var(--surface-2) !important;
+    color: var(--text-1) !important;
+    font-weight: 600 !important;
+  }
+
+  .settingsMenu .titleContent {
+    inline-size: 100% !important;
+    max-inline-size: none !important;
+  }
+
+  .settingsMenu .titleUnderline {
+    display: none !important;
+  }
+
+  .settingsMenu .iconAndTitleText {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 !important;
+  }
+
+  .settingsMenu .iconAndTitleText svg {
+    font-size: 16px;
+    flex: none;
+    opacity: 0.8;
+  }
+
+  .settingsPage .switchRow {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-block: 0 48px !important;
+    margin-inline: 0 !important;
+    flex-wrap: wrap;
+    min-block-size: 36px;
+  }
+
+  .settingsPage .switchRow > .btn {
+    border: 0 !important;
+    background: transparent !important;
+    color: var(--text-2) !important;
+    padding-block: 0 !important;
+    padding-inline: 10px !important;
+    margin-inline-start: -10px !important;
+    min-block-size: 32px;
+    font-weight: 500 !important;
+  }
+
+  .settingsPage .switchRow > .btn:hover {
+    background: var(--surface-2) !important;
+    color: var(--text-1) !important;
+  }
+
+  .settingsPage .settingsToggle .switch-label {
+    font-size: 13px;
+    color: var(--text-2);
+    padding-inline-end: calc(var(--sw-w) + 12px) !important;
+    padding-block: 0 !important;
+  }
+
+  .settingsPage .settingsToggle {
+    inline-size: auto;
+    min-inline-size: 0;
+    border: 0 !important;
+    min-block-size: 0 !important;
+  }
+
+  .settingsSection.section {
+    margin-block: 0 56px !important;
+    margin-inline: 0 !important;
+    inline-size: 100% !important;
+    scroll-margin-block-start: 90px;
+  }
+
+  .settingsSection .sectionBody {
+    position: relative;
+    background: transparent !important;
+    padding: 0 !important;
+    border: 0 !important;
+  }
+
+  .settingsSection .sectionBody > div {
+    padding: 0 !important;
+    box-sizing: border-box;
+    inline-size: 100% !important;
+    margin: 0;
+  }
+
+  .settingsSection h3.sectionTitle {
+    margin-block: 0 12px !important;
+    margin-inline: 0 !important;
+    font-size: 20px !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.025em;
+    color: var(--text-1);
+    text-align: start;
+  }
+
+  .settingsSection h4.groupTitle {
+    margin-block: 32px 4px !important;
+    margin-inline: 0 !important;
+    text-align: start !important;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+  }
+
+  .settingsSection br {
+    display: none;
+  }
+
+  .settingsSection .ft-flex-box {
+    display: block;
+    inline-size: 100%;
+  }
+
+  .settingsSection .ft-flex-box:has(> .btn),
+  .settingsSection .ft-flex-box:has(> .settingsFlexStart460px) {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start !important;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .settingsSection .ft-flex-box:has(> .btn) {
+    padding-block: 0;
+    margin-block-start: 24px;
+  }
+
+  .settingsSection h4.groupTitle + .ft-flex-box:has(> .btn) {
+    margin-block-start: 12px;
+  }
+
+  .settingsSection .switchColumnGrid,
+  .settingsSection .switchColumn,
+  .settingsSection .switchGrid {
+    display: block;
+    margin: 0 !important;
+  }
+
+  .settingsSection .switchColumn {
+    gap: 8px;
+  }
+
+  .settingsSection .switch-ctn,
+  .settingsSection .switch-ctn.compact {
+    position: relative;
+    margin: 0 !important;
+    padding: 0 !important;
+    inset: auto !important;
+    box-sizing: border-box;
+    min-block-size: var(--row-h);
+    display: flex;
+    align-items: center;
+    inline-size: 100%;
+    border-block-start: 1px solid var(--line);
+  }
+
+  .settingsSection .switch-ctn.disabled {
+    opacity: 0.45;
+  }
+
+  .settingsSection .switch-ctn.disabled .switch-label-text {
+    opacity: 1;
+  }
+
+  .settingsSection .switch-input {
+    position: absolute !important;
+    inset: 0 !important;
+    inline-size: 100% !important;
+    block-size: 100% !important;
+    margin: 0;
+    opacity: 0;
+    transform: none !important;
+    pointer-events: none;
+  }
+
+  .settingsContent .switch-label {
+    position: static !important;
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    inline-size: 100%;
+    box-sizing: border-box;
+    padding-block: 12px !important;
+    padding-inline: 0 calc(var(--sw-w) + 24px) !important;
+    max-inline-size: none !important;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: var(--text-1);
+    cursor: pointer;
+  }
+
+  .settingsContent .switch-label-text {
+    margin: 0 !important;
+    min-inline-size: 0;
+  }
+
+  .settingsContent .switch-label::before,
+  .settingsContent .switch-label::after {
+    content: '';
+    position: absolute !important;
+    inset-block-start: 50% !important;
+    margin: 0 !important;
+    transform: translateY(-50%) !important;
+    transition: background-color 0.2s, inset-inline-end 0.2s cubic-bezier(0.3, 0.7, 0.2, 1), box-shadow 0.2s !important;
+  }
+
+  .settingsContent .switch-label::before {
+    inline-size: var(--sw-w) !important;
+    block-size: var(--sw-h) !important;
+    border-radius: var(--sw-r) !important;
+    background-color: var(--surface-3) !important;
+    box-shadow: inset 0 0 0 1px var(--line-strong);
+    inset-inline: auto 0 !important;
+  }
+
+  .settingsContent .switch-label::after {
+    inline-size: var(--sw-knob) !important;
+    block-size: var(--sw-knob) !important;
+    border-radius: var(--sw-r) !important;
+    background-color: var(--text-3) !important;
+    box-shadow: none !important;
+    inset-inline: auto calc(var(--sw-w) - var(--sw-knob) - (var(--sw-h) - var(--sw-knob)) / 2) !important;
+  }
+
+  .settingsContent .switch-input:checked + .switch-label::before {
+    background-color: var(--ink) !important;
+    box-shadow: none;
+  }
+
+  .settingsContent .switch-input:checked + .switch-label::after {
+    background-color: var(--on-ink) !important;
+    transform: translateY(-50%) !important;
+    inset-inline-end: calc((var(--sw-h) - var(--sw-knob)) / 2) !important;
+  }
+
+  .settingsContent .switch-input:disabled + .switch-label::before {
+    background-color: var(--surface-3) !important;
+  }
+
+  .settingsContent .switch-input:disabled + .switch-label::after {
+    background-color: var(--text-3) !important;
+  }
+
+  .settingsContent .switch-input:focus-visible + .switch-label::before {
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--ink) 25%, transparent);
+  }
+
+  .settingsContent .switch-ctn.disabled .switch-label {
+    cursor: not-allowed;
+  }
+
+  .settingsSection .tooltip,
+  .settingsContent .tooltip {
+    position: static !important;
+    display: inline-flex !important;
+    align-items: center;
+    inset: auto !important;
+    flex: none;
+  }
+
+  .settingsSection .tooltip > .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: 20px;
+    block-size: 20px;
+    border-radius: 50%;
+    font-size: 15px;
+    color: var(--text-3) !important;
+    cursor: help;
+    transition: color 0.15s;
+  }
+
+  .settingsSection .tooltip > .button:hover,
+  .settingsSection .tooltip > .button:focus-visible {
+    color: var(--text-1) !important;
+  }
+
+  .settingsSection .tooltip > .button:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--line-strong);
+  }
+
+  .settingsSection .tooltip > .text {
+    display: none;
+    inset-block: calc(100% - 4px) auto !important;
+    inset-inline: auto 0 !important;
+    margin: 0 !important;
+    transform: translateY(4px) !important;
+    inline-size: min(300px, calc(100% - 8px));
+    min-inline-size: 0 !important;
+    max-inline-size: none !important;
+    box-sizing: border-box;
+    padding-block: 11px !important;
+    padding-inline: 14px !important;
+    border-radius: var(--menu-r) !important;
+    background: var(--surface-3) !important;
+    color: var(--text-1) !important;
+    font-size: 12.5px !important;
+    font-weight: 500;
+    line-height: 1.5 !important;
+    text-align: start !important;
+    z-index: 30 !important;
+    box-shadow: 0 14px 36px rgb(0 0 0 / 50%);
+  }
+
+  .settingsSection .groupTitle .tooltip > .text {
+    inset-inline: 0 auto !important;
+  }
+
+  .settingsSection .tooltip > .text.top {
+    inset-block: auto calc(100% + 2px) !important;
+  }
+
+  .settingsSection .tooltip > .button:hover + .text,
+  .settingsSection .tooltip > .button:focus + .text {
+    transform: translateY(0) !important;
+    display: block;
+    animation: tip-in 0.15s ease-out;
+  }
+
+  @keyframes tip-in {
+    from {
+      opacity: 0;
+    }
+  }
+
+  .settingsSection .select {
+    position: relative;
+    display: grid !important;
+    grid-template-columns: auto minmax(0, 1fr) var(--ctl-w);
+    align-items: center;
+    column-gap: 8px;
+    inline-size: 100% !important;
+    min-inline-size: 0 !important;
+    min-block-size: var(--row-h);
+    margin: 0 !important;
+    padding-block: 8px;
+    padding-inline: 0;
+    box-sizing: border-box;
+    border-block-start: 1px solid var(--line);
+  }
+
+  .settingsSection .select .select-label {
+    grid-area: 1 / 1;
+    position: static !important;
+    display: flex !important;
+    align-items: center;
+    gap: 10px !important;
+    inset: auto !important;
+    transform: none !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: var(--text-1) !important;
+    letter-spacing: 0;
+    transition: none !important;
+  }
+
+  .settingsSection .select .select-label svg {
+    display: none;
+  }
+
+  .settingsSection .select > .tooltip {
+    grid-area: 1 / 2;
+    justify-self: start;
+  }
+
+  .settingsSection .select .select-text {
+    grid-area: 1 / 3;
+    appearance: none;
+    box-sizing: border-box;
+    inline-size: 100% !important;
+    block-size: var(--field-h) !important;
+    padding-block: 0 !important;
+    padding-inline: 14px 40px !important;
+    border: 0;
+    border-radius: var(--field-r) !important;
+    background: var(--surface-2) !important;
+    color: var(--text-1) !important;
+    font-family: inherit;
+    font-size: 14px !important;
+    font-weight: 500;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background 0.15s, box-shadow 0.15s;
+  }
+
+  .settingsSection .select .select-text:hover {
+    background: var(--surface-3) !important;
+  }
+
+  /* stylelint-disable-next-line a11y/no-outline-none -- the box-shadow ring below is the focus indicator */
+  .settingsSection .select .select-text:focus-visible {
+    outline: none;
+    background: var(--surface-3) !important;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--ink) 18%, transparent);
+  }
+
+  .settingsSection .select > svg.iconSelect {
+    grid-area: 1 / 3;
+    place-self: center end;
+    position: static !important;
+    inset: auto !important;
+    margin-block: 0 !important;
+    margin-inline: 0 14px !important;
+    block-size: 16px !important;
+    inline-size: 16px !important;
+    font-size: 15px !important;
+    color: var(--text-2);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .settingsSection .select .select-text option {
+    background: var(--surface-2);
+    color: var(--text-1);
+  }
+
+  .settingsSection .select .select-highlight,
+  .settingsSection .select .select-bar {
+    display: none !important;
+  }
+
+  .settingsSection .pure-material-slider {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) var(--ctl-w);
+    align-items: center;
+    column-gap: 16px;
+    inline-size: 100% !important;
+    min-block-size: var(--row-h);
+    margin: 0 !important;
+    padding-block: 8px !important;
+    padding-inline: 0 !important;
+    box-sizing: border-box;
+    color: var(--text-1) !important;
+    border-block-start: 1px solid var(--line);
+  }
+
+  .settingsSection .pure-material-slider > .label {
+    order: -1;
+    margin: 0 !important;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-1);
+  }
+
+  .settingsSection .pure-material-slider > .input {
+    position: static !important;
+    inset: auto !important;
+    appearance: none;
+    inline-size: 100%;
+    block-size: 18px;
+    margin: 0 !important;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .settingsSection .pure-material-slider > .input::-webkit-slider-runnable-track {
+    appearance: none;
+    block-size: 4px !important;
+    margin: 0 !important;
+    border-radius: 999px !important;
+    background-color: var(--surface-3) !important;
+  }
+
+  .settingsSection .pure-material-slider > .input::-webkit-slider-thumb {
+    appearance: none;
+    inline-size: 16px !important;
+    block-size: 16px !important;
+    margin-block-start: -6px;
+    border: 0 !important;
+    border-radius: 50% !important;
+    background-color: var(--ink) !important;
+    transform: none !important;
+    box-shadow: 0 0 0 4px var(--bg) !important;
+    transition: box-shadow 0.15s !important;
+  }
+
+  .settingsSection .pure-material-slider > .input:hover::-webkit-slider-thumb {
+    box-shadow: 0 0 0 4px var(--bg), 0 0 0 6px var(--line-strong) !important;
+  }
+
+  .settingsSection .pure-material-slider > .input:focus-visible::-webkit-slider-thumb,
+  .settingsSection .pure-material-slider > .input:active::-webkit-slider-thumb {
+    box-shadow: 0 0 0 4px var(--bg), 0 0 0 6px var(--text-3) !important;
+  }
+
+  .settingsSection .onlyShowLatestFromChannelNumber {
+    padding: 0 !important;
+    inline-size: 100% !important;
+    max-inline-size: none !important;
+  }
+
+  .settingsSection .ft-input-tags-component {
+    inline-size: 100% !important;
+    max-inline-size: none;
+    padding-block: 16px 20px !important;
+    padding-inline: 0 !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    border-block-start: 1px solid var(--line);
+  }
+
+  .settingsSection .ft-input-component {
+    position: relative;
+    inline-size: 100%;
+    min-inline-size: 0;
+  }
+
+  .settingsSection .selectLabel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-block: 0 10px;
+    margin-inline: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-1);
+  }
+
+  .settingsSection .inputWrapper {
+    position: relative;
+    display: block;
+  }
+
+  .settingsSection input.ft-input {
+    box-sizing: border-box;
+    inline-size: 100%;
+    block-size: var(--field-h) !important;
+    margin: 0 !important;
+    padding-block: 0 !important;
+    padding-inline: 16px !important;
+    border: 0;
+    border-radius: var(--field-r) !important;
+    background: var(--surface-2) !important;
+    color: var(--text-1) !important;
+    font-size: 14px !important;
+    font-weight: 500;
+    transition: background 0.15s, box-shadow 0.15s;
+  }
+
+  .settingsSection .ft-input-component.showActionButton input.ft-input {
+    padding-inline-end: 48px !important;
+  }
+
+  .settingsSection input.ft-input:focus {
+    background: var(--surface-3) !important;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--ink) 18%, transparent) !important;
+  }
+
+  .settingsSection .inputAction {
+    position: absolute !important;
+    inset-block: 0 !important;
+    inset-inline-end: 4px !important;
+    margin-block: auto !important;
+    margin-inline: 0 !important;
+    block-size: 30px;
+    inline-size: 30px;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--icon-btn-r) !important;
+    color: var(--text-2) !important;
+  }
+
+  .settingsSection .inputAction.enabled:hover {
+    background: var(--surface-3) !important;
+    color: var(--text-1) !important;
+  }
+
+  .settingsSection .ft-input-component .options {
+    inset-inline: 0;
+  }
+
+  .settingsSection .ft-tag-box ul {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-block: 12px 0 !important;
+    margin-inline: 0 !important;
+    padding: 0;
+    list-style: none;
+  }
+
+  .settingsSection .ft-tag-box li {
+    float: none !important;
+    margin: 0 !important;
+    display: inline-flex;
+    align-items: center;
+    background: var(--surface-2) !important;
+    border-radius: var(--badge-r, 999px) !important;
+    color: var(--text-1);
+  }
+
+  .settingsSection .ft-tag-box li > .name {
+    padding-block: 6px !important;
+    padding-inline: 12px !important;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .settingsContent .btn {
+    margin: 0 !important;
+    min-inline-size: 0 !important;
+    min-block-size: var(--btn-h);
+    block-size: auto;
+    padding-block: 0 !important;
+    padding-inline: 22px !important;
+    gap: 8px;
+    flex: 0 0 auto;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    border-radius: var(--control-r) !important;
+    background: var(--surface-2) !important;
+    color: var(--text-1) !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    overflow: clip;
+  }
+
+  .settingsContent .btn:hover {
+    background: var(--surface-3) !important;
+  }
+
+  .settingsContent .btn svg {
+    font-size: 15px;
+  }
+
+  .settingsContent .btn.centerButton {
+    background: var(--ink) !important;
+    color: var(--on-ink) !important;
+  }
+
+  .settingsContent .btn.centerButton:hover {
+    background: var(--ink-soft) !important;
+  }
+
+  .settingsContent .btn[style*='destructive'] {
+    background: color-mix(in srgb, var(--danger) 12%, transparent) !important;
+    color: var(--danger) !important;
+  }
+
+  .settingsContent .btn[style*='destructive']:hover {
+    background: color-mix(in srgb, var(--danger) 20%, transparent) !important;
+  }
+
+  .settingsSection .settingsFlexStart460px {
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 12px;
+    max-inline-size: none;
+    padding-block: 16px;
+    border-block-start: 1px solid var(--line);
+  }
+
+  .settingsSection .settingsFlexStart460px .ft-input-component {
+    flex: 1 1 280px;
+    inline-size: auto;
+  }
+
+  .settingsSection .settingsFlexStart460px .btn {
+    align-self: flex-end !important;
+    margin-block: 0 !important;
+  }
+
+  .settingsSection .ft-flex-box > p {
+    margin: 0;
+    padding-block: 12px 0;
+    font-size: 13px;
+    color: var(--text-2);
+    line-height: 1.5;
+  }
+
+  .settingsSection a {
+    color: var(--text-2);
+    text-decoration: underline;
+    text-decoration-color: var(--line-strong);
+    text-underline-offset: 3px;
+    transition: color 0.15s;
+  }
+
+  .settingsSection a:hover {
+    color: var(--text-1);
+  }
+
+  .settingsSection .experimental-warning {
+    margin-block: 0 12px;
+    margin-inline: 0;
+    padding: 0;
+    background: transparent;
+    color: var(--text-2);
+    font-size: 13px;
+    font-weight: 500;
+    text-align: start;
+    line-height: 1.5;
+  }
+
+  @media (width <= 1015px) {
+    .settingsPage.routerView {
+      grid-template-columns: minmax(0, 1fr) !important;
+      gap: 20px !important;
+    }
+
+    .settingsMenu {
+      position: static !important;
+      flex-direction: row !important;
+      flex-wrap: wrap;
+      font-size: 14px !important;
+    }
+
+    .settingsMenu .header {
+      inline-size: 100%;
+    }
+
+    .settingsMenu .title {
+      inline-size: auto !important;
+    }
+
+    .settingsSection .select,
+    .settingsSection .pure-material-slider {
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 8px;
+    }
+
+    .settingsSection .select .select-text,
+    .settingsSection .select > svg.iconSelect {
+      grid-column: 1 / -1;
+      grid-row: 2;
+    }
+  }
+
+  .routerView .card:has(> .profileList),
+  .routerView .card:has(> .profileEdit),
+  .routerView .card:has(> :is(.selectedCount, .selected)) {
+    --title-w: 700;
+  }
+
+  .routerView .card:has(> .profileList) {
+    --tile: 124px;
+
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, var(--tile));
+    gap: 12px;
+    align-content: start;
+    padding-block-end: 24px !important;
+    max-inline-size: none !important;
+  }
+
+  .routerView .card:has(> .profileList) > h2 {
+    grid-column: 1 / -1;
+    margin-block: 12px !important;
+    margin-inline: 0 !important;
+    font-size: 28px !important;
+    font-weight: var(--title-w) !important;
+    text-align: start !important;
+  }
+
+  .routerView .card:has(> .profileList) > .profileList,
+  .routerView .card:has(> .profileList) > .ft-flex-box {
+    display: contents !important;
+  }
+
+  .card > .profileList .bubblePadding {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    inline-size: var(--tile);
+    block-size: 112px;
+    padding-block: 18px 12px;
+    padding-inline: 10px;
+    gap: 12px;
+    justify-content: center;
+    border-radius: var(--r-lg);
+    background: transparent !important;
+    transition: background 0.15s;
+  }
+
+  .card > .profileList .bubblePadding:hover {
+    background: var(--surface) !important;
+  }
+
+  .card > .profileList .bubblePadding.openedProfile {
+    background: var(--surface-2) !important;
+  }
+
+  .card > .profileList .bubble {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: 48px;
+    block-size: 48px;
+    margin: 0;
+    flex: none;
+  }
+
+  .card > .profileList .initial {
+    padding: 0;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1;
+    color: #000;
+  }
+
+  .card > .profileList .profileName {
+    inline-size: 100%;
+    block-size: auto;
+    display: block;
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-align: center;
+    color: var(--text-1);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .card:has(> .profileList) > .ft-flex-box > .btn {
+    box-sizing: border-box;
+    inline-size: var(--tile);
+    block-size: 112px;
+    flex-direction: column;
+    gap: 10px;
+    padding-block: 0 !important;
+    padding-inline: 10px !important;
+    margin: 0 !important;
+    border-radius: var(--r-lg) !important;
+    background: transparent !important;
+    color: var(--text-2) !important;
+    border: 1.5px dashed var(--line-strong) !important;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.25;
+  }
+
+  .card:has(> .profileList) > .ft-flex-box > .btn svg {
+    font-size: 22px;
+  }
+
+  .card:has(> .profileList) > .ft-flex-box > .btn:hover {
+    background: var(--surface) !important;
+    color: var(--text-1) !important;
+    border-color: var(--text-3) !important;
+  }
+
+  .card:has(> .profileList) > .ft-flex-box > .btn::before {
+    content: '';
+    inline-size: 22px;
+    block-size: 22px;
+    background: currentcolor;
+    mask: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='M12 5v14'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
+
+  .routerView .card:has(> .profileList) .btn {
+    overflow: clip;
+  }
+
+  .routerView .card.card:has(> .profileEdit),
+  .routerView .card.card:has(> :is(.selectedCount, .selected)) {
+    box-sizing: border-box;
+    background: transparent !important;
+    border-radius: 0;
+    border-block-start: 1px solid var(--line);
+    padding-block: 32px 8px !important;
+    padding-inline: 0 !important;
+    margin-block: 32px 0 !important;
+    margin-inline: var(--page-x) !important;
+    inline-size: auto !important;
+    max-inline-size: 640px !important;
+  }
+
+  .routerView .card.card:has(> .profileEdit) > h2,
+  .routerView .card.card:has(> :is(.selectedCount, .selected)) > h2 {
+    margin-block: 0 20px !important;
+    margin-inline: 0 !important;
+    font-size: 20px !important;
+    font-weight: var(--title-w) !important;
+    letter-spacing: -0.02em;
+    text-align: start !important;
+  }
+
+  .profileEdit {
+    display: grid !important;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 28px 20px;
+    align-items: center;
+    justify-content: stretch !important;
+    flex-wrap: nowrap !important;
+    inline-size: 100%;
+
+    --field-h: 46px;
+    --btn-h: 42px;
+  }
+
+  .profileEdit,
+  .profileEdit * {
+    text-align: start;
+  }
+
+  .profileEdit > *,
+  .profileEdit .secondEditRow,
+  .profileEdit .secondEditRow > div:last-child,
+  .profileEdit .profilePreviewSection {
+    display: contents !important;
+  }
+
+  .profileEdit h3 {
+    margin-block: 0 12px !important;
+    margin-inline: 0 !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0;
+    color: var(--text-2);
+    text-align: start !important;
+  }
+
+  .profileEdit .secondEditRow > div:first-child {
+    grid-column: 1 / -1;
+    order: 1;
+    min-inline-size: 0;
+  }
+
+  .profileEdit > div:first-child {
+    grid-column: 1 / -1;
+    order: 2;
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 16px 20px;
+    align-items: center;
+    justify-content: flex-start;
+    min-inline-size: 0;
+  }
+
+  .profileEdit > div:first-child > h3,
+  .profileEdit > div:first-child > .colorOptions {
+    flex: 0 0 100%;
+    margin: 0 !important;
+  }
+
+  .profileEdit > div:first-child > h3 {
+    margin-block-end: -4px !important;
+  }
+
+  .profileEdit .secondEditRow > div:last-child > h3 {
+    grid-column: 1 / -1;
+    order: 3;
+    margin-block: 0 -14px !important;
+    margin-inline: 0 !important;
+  }
+
+  .profileEdit .profilePreviewSection > .colorOption {
+    order: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: 40px;
+    block-size: 40px;
+    margin: 0 !important;
+    border-radius: 50% !important;
+  }
+
+  .profileEdit .profilePreviewSection > .ft-flex-box {
+    order: 5;
+    display: flex !important;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-start !important;
+  }
+
+  .profileEdit .colorOptions {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, 22px);
+    gap: 6px;
+    justify-content: start !important;
+    min-inline-size: 0 !important;
+    margin: 0 !important;
+    flex: 0 0 100% !important;
+    box-sizing: border-box;
+    padding-inline-end: max(0px, calc(100% - 440px));
+    max-inline-size: none !important;
+  }
+
+  .profileEdit .colorOptions .colorOption {
+    inline-size: 22px;
+    block-size: 22px;
+    margin: 0;
+    flex: none;
+    transition: transform 0.15s, box-shadow 0.15s;
+    cursor: pointer;
+  }
+
+  .profileEdit .colorOptions .colorOption:hover {
+    transform: scale(1.15);
+  }
+
+  .profileEdit .colorOptions .colorOption:focus-visible,
+  .profileEdit .colorOptions .colorOption[aria-pressed='true'],
+  .profileEdit .colorOptions .colorOption.selected {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--ink);
+  }
+
+  .profileEdit .colorOption > .initial {
+    font-weight: 600;
+    color: #000;
+    padding: 0;
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .profileEdit .customColorSection {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    margin: 0 !important;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-2);
+    white-space: nowrap;
+    text-align: start !important;
+  }
+
+  .profileEdit .customColorSection label {
+    text-align: start !important;
+  }
+
+  .profileEdit .customColorSection input[type='color'] {
+    inline-size: 28px;
+    block-size: 28px;
+    padding: 0;
+    border: 0;
+    border-radius: var(--swatch-r, 50%);
+    background: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    flex: none;
+  }
+
+  .profileEdit input[type='color']::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+
+  .profileEdit input[type='color']::-webkit-color-swatch {
+    border: 0;
+    border-radius: var(--swatch-r, 50%);
+  }
+
+  .profileEdit .colorSelection {
+    inline-size: 150px !important;
+    margin: 0 !important;
+  }
+
+  .profileEdit .profileName {
+    inline-size: 100% !important;
+    max-inline-size: none;
+    margin: 0 !important;
+  }
+
+  .profileEdit input.ft-input {
+    box-sizing: border-box;
+    inline-size: 100%;
+    block-size: var(--field-h) !important;
+    margin: 0 !important;
+    padding-block: 0 !important;
+    padding-inline: 16px !important;
+    border: 0;
+    border-radius: var(--field-r) !important;
+    background: var(--surface-2) !important;
+    color: var(--text-1) !important;
+    font-size: 14px !important;
+    font-weight: 500;
+  }
+
+  .profileEdit input.ft-input.disabled {
+    color: var(--text-2) !important;
+    font-family: var(--font-mono);
+    font-size: 13px !important;
+  }
+
+  .profileEdit input.ft-input:focus {
+    background: var(--surface-3) !important;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--ink) 18%, transparent) !important;
+  }
+
+  .profileEdit .btn,
+  .routerView .card:has(> :is(.selectedCount, .selected)) .btn {
+    margin: 0 !important;
+    min-inline-size: 0 !important;
+    padding-block: 0 !important;
+    font-weight: 600 !important;
+    border-radius: var(--control-r) !important;
+  }
+
+  .profileEdit .btn {
+    min-block-size: var(--btn-h);
+    padding-inline: 18px !important;
+    font-size: 13.5px !important;
+    overflow: clip;
+  }
+
+  .routerView .card:has(> :is(.selectedCount, .selected)) .btn {
+    min-block-size: 34px;
+    padding-inline: 14px !important;
+    font-size: 13px !important;
+    overflow: clip;
+  }
+
+  .profileEdit .profilePreviewSection > .ft-flex-box > .btn:first-child {
+    background: var(--ink) !important;
+    color: var(--on-ink) !important;
+  }
+
+  .profileEdit .profilePreviewSection > .ft-flex-box > .btn:first-child:hover {
+    background: var(--ink-soft) !important;
+  }
+
+  .profileEdit .profilePreviewSection > .ft-flex-box > .btn:not(:first-child) {
+    background: var(--surface-2) !important;
+  }
+
+  .profileEdit .btn:not(:first-child),
+  .routerView .card:has(> :is(.selectedCount, .selected)) .btn {
+    background: var(--surface-2) !important;
+    color: var(--text-1) !important;
+  }
+
+  .profileEdit .btn:not(:first-child):hover,
+  .routerView .card:has(> :is(.selectedCount, .selected)) .btn:hover {
+    background: var(--surface-3) !important;
+  }
+
+  .routerView .card .btn[style*='destructive'] {
+    background: color-mix(in srgb, var(--danger) 12%, transparent) !important;
+    color: var(--danger) !important;
+  }
+
+  .routerView .card:has(> p.selected) > .ft-flex-box:last-child > .btn:last-child:not(:first-child) {
+    background: var(--ink) !important;
+    color: var(--on-ink) !important;
+  }
+
+  .routerView .card:has(> p.selected) > .ft-flex-box:last-child > .btn:last-child:not(:first-child):hover {
+    background: var(--ink-soft) !important;
+  }
+
+  .routerView .card:has(> :is(.selectedCount, .selected)) {
+    --check-r: 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .routerView .card:has(> :is(.selectedCount, .selected)) > h2 {
+    order: 0;
+  }
+
+  .routerView .card:has(> :is(.selectedCount, .selected)) > :is(.selectedCount, .selected) {
+    margin-block: -12px 18px !important;
+    margin-inline: 0 !important;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: start !important;
+    color: var(--text-3) !important;
+    order: 1;
+  }
+
+  .routerView .card:has(> :is(.selectedCount, .selected)) > .ft-flex-box {
+    justify-content: flex-start !important;
+    align-items: stretch;
+    gap: 8px;
+    margin: 0;
+  }
+
+  .routerView .card:has(> :is(.selectedCount, .selected)) > .ft-flex-box:has(> .bubblePadding) {
+    display: block;
+    max-block-size: 360px;
+    margin-block-end: 20px;
+    margin-inline: -8px;
+    padding-inline: 8px;
+    overflow: hidden auto;
+  }
+
+  .routerView .card:has(> :is(.selectedCount, .selected)) > .ft-flex-box:has(> .select) {
+    order: 2;
+    display: flex !important;
+    justify-content: stretch !important;
+    margin-block: 0 12px !important;
+    margin-inline: 0 !important;
+  }
+
+  .routerView .card:has(> :is(.selectedCount, .selected)) > .ft-flex-box:has(> .bubblePadding),
+  .routerView .card:has(> :is(.selectedCount, .selected)) > .ft-flex-box:has(> .message) {
+    order: 3;
+  }
+
+  .routerView .card:has(> :is(.selectedCount, .selected)) > .ft-flex-box:last-child {
+    order: 4;
+    flex-wrap: wrap;
+  }
+
+  .routerView .card:has(> :is(.selectedCount, .selected)) > .ft-flex-box > .message {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-3);
+  }
+
+  .routerView .card:has(> :is(.selectedCount, .selected)) > .ft-flex-box > .select {
+    position: relative;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 220px;
+    align-items: center;
+    column-gap: 16px;
+    inline-size: 100% !important;
+    min-inline-size: 0 !important;
+    margin: 0 !important;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .routerView .card:has(> :is(.selectedCount, .selected)) > .ft-flex-box > .select .select-label {
+    grid-area: 1 / 1;
+    position: static !important;
+    display: flex !important;
+    align-items: center;
+    inset: auto !important;
+    transform: none !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: var(--text-1) !important;
+    letter-spacing: 0;
+    transition: none !important;
+  }
+
+  .routerView .card:has(> :is(.selectedCount, .selected)) > .ft-flex-box > .select .select-label svg {
+    display: none;
+  }
+
+  .routerView .card:has(> :is(.selectedCount, .selected)) > .ft-flex-box > .select .select-text {
+    grid-area: 1 / 2;
+    appearance: none;
+    box-sizing: border-box;
+    inline-size: 100% !important;
+    block-size: var(--field-h, 42px) !important;
+    padding-block: 0 !important;
+    padding-inline: 14px 40px !important;
+    border: 0;
+    border-radius: var(--field-r) !important;
+    background: var(--surface-2) !important;
+    color: var(--text-1) !important;
+    font-family: inherit;
+    font-size: 14px !important;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .routerView .card:has(> :is(.selectedCount, .selected)) > .ft-flex-box > .select .select-text:hover {
+    background: var(--surface-3) !important;
+  }
+
+  /* stylelint-disable-next-line a11y/no-outline-none -- the box-shadow ring below is the focus indicator */
+  .routerView .card:has(> :is(.selectedCount, .selected)) > .ft-flex-box > .select .select-text:focus-visible {
+    outline: none;
+    background: var(--surface-3) !important;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--ink) 18%, transparent);
+  }
+
+  .routerView .card:has(> :is(.selectedCount, .selected)) > .ft-flex-box > .select .select-text option {
+    background: var(--surface-2);
+    color: var(--text-1);
+  }
+
+  .routerView .card:has(> :is(.selectedCount, .selected)) > .ft-flex-box > .select > svg.iconSelect {
+    grid-area: 1 / 2;
+    place-self: center end;
+    position: static !important;
+    inset: auto !important;
+    margin-block: 0 !important;
+    margin-inline: 0 14px !important;
+    block-size: 16px !important;
+    inline-size: 16px !important;
+    font-size: 15px !important;
+    color: var(--text-2);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .routerView .card:has(> :is(.selectedCount, .selected)) > .ft-flex-box > .select .select-highlight,
+  .routerView .card:has(> :is(.selectedCount, .selected)) > .ft-flex-box > .select .select-bar {
+    display: none !important;
+  }
+
+  .routerView .card:has(> :is(.selectedCount, .selected)) .bubblePadding {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    inline-size: auto;
+    block-size: 52px;
+    padding-block: 0;
+    background: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    min-inline-size: 0;
+    padding-inline: 8px 40px;
+    border-radius: var(--r);
+    margin-inline: -8px;
+    border-block-start: 0;
+  }
+
+  .routerView .card:has(> :is(.selectedCount, .selected)) .bubblePadding:hover,
+  .routerView .card:has(> :is(.selectedCount, .selected)) .bubblePadding[aria-checked='true'] {
+    background: var(--surface-2);
+  }
+
+  .routerView .card:has(> :is(.selectedCount, .selected)) .bubblePadding img.bubble {
+    inline-size: 32px;
+    block-size: 32px;
+    margin: 0;
+    flex: none;
+    border-radius: 50%;
+  }
+
+  .routerView .card:has(> :is(.selectedCount, .selected)) .bubblePadding .channelName {
+    min-inline-size: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-1);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+    text-align: start !important;
+  }
+
+  .routerView .card:has(> :is(.selectedCount, .selected)) .bubblePadding::after {
+    content: '';
+    position: absolute;
+    inset-inline-end: 10px !important;
+    inset-block-start: 50%;
+    inline-size: 18px;
+    block-size: 18px;
+    transform: translateY(-50%);
+    box-shadow: inset 0 0 0 1.5px var(--line-strong);
+    border-radius: var(--check-r);
+  }
+
+  .routerView .card:has(> :is(.selectedCount, .selected)) .bubblePadding .bubble.selected {
+    position: absolute !important;
+    inset: auto !important;
+    inset-inline-end: 10px !important;
+    inset-block-start: 50% !important;
+    inline-size: 18px !important;
+    block-size: 18px !important;
+    transform: translateY(-50%);
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ink) !important;
+    color: var(--on-ink) !important;
+    z-index: 1;
+    border-radius: var(--check-r);
+  }
+
+  .routerView .card:has(> :is(.selectedCount, .selected)) .bubblePadding .bubble.selected svg {
+    display: none !important;
+  }
+
+  .routerView .card:has(> :is(.selectedCount, .selected)) .bubblePadding .bubble.selected::after {
+    content: '';
+    inline-size: 12px;
+    block-size: 12px;
+    background: currentcolor;
+    mask: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
+}
