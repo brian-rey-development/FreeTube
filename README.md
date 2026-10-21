@@ -21,6 +21,15 @@ Available for Windows (10 and later), Mac (macOS 12 and later) & Linux thanks to
 <p align="center"><a href="https://freetubeapp.io/">Website</a> &bull; <a href="https://docs.freetubeapp.io/">Documentation</a> &bull; <a href="https://docs.freetubeapp.io/faq/">FAQ</a> &bull; <a href="https://github.com/FreeTubeApp/FreeTube/discussions">Discussions</a></p>
 <hr>
 
+> [!IMPORTANT]
+> This is a personal fork of FreeTube, based on [v0.25.3-beta](https://github.com/FreeTubeApp/FreeTube/releases/tag/v0.25.3-beta). It adds three changes on top of upstream:
+>
+> - **Soft base theme.** A neutral, monochrome dark theme with Plus Jakarta Sans, Lucide icons and calmer surfaces. Select it in Settings, Theme, Base Theme. It lives in `src/renderer/themes/soft/` and only applies while it is selected.
+> - **Images from the YouTube CDN.** With the Invidious backend, thumbnails and channel avatars load from `i.ytimg.com` and `yt3.ggpht.com` instead of the instance's image proxy, while API calls and playback still go through the instance.
+> - **Empty states in the profile channel lists.** The profile manager now says when a profile has no channels or there are no other channels to add.
+>
+> Build it like upstream with `pnpm install` and `pnpm build`.
+
 > [!NOTE] 
 > FreeTube is currently in Beta. While it should work well for most users, there are still bugs and missing features that need to be addressed.
 >
